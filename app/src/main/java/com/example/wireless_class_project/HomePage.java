@@ -20,4 +20,20 @@ public class HomePage extends AppCompatActivity {
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    public void GoToCompetency(View view)
+    {
+        Intent intent   = new Intent(this, Competency.class);
+        startActivity(intent);
+    }
+    public void GoToGrade(View view)
+    {
+        Intent intent   = new Intent(this, GradeInput.class);
+        startActivity(intent);
+    }
+    public void GoToQuestionare(View view)
+    {
+        Intent intent   = new Intent(this, Questionare.class);
+        startActivity(intent);
+    }
+
 }
