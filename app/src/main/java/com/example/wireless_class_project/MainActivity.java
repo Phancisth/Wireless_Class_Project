@@ -12,7 +12,6 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     private EditText LoginUsername;
     private EditText LoginPassword;
-    private Button LoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
         LoginUsername = findViewById(R.id.Login_Username);
         LoginPassword = findViewById(R.id.Login_Password);
-        LoginButton = (Button) findViewById(R.id.Login_Button);
 
-        LoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HomePage.class));
-            }
-        });
+    }
 
+    public void Login(View view)
+    {
+        Intent intent   = new Intent(this, HomePage.class);
+        startActivity(intent);
     }
 }
