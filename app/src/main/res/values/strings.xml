@@ -5,7 +5,7 @@
     <string name="PasswordHint">Password</string>
     <string name="LoginButton">Login</string>
     <string name="comp_report_button">Competency Report</string>
-    <string name="grade_report_button">Grade Report</string>
+    <string name="grade_input_button">Grade Input</string>
     <string name="track_quiz_button">Track Questionnaire</string>
     <string name="logout_button">Logout</string>
 </resources>
