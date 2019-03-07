@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.FirebaseApp;
+
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -26,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
     public void Login(View view)
     {
         Intent intent   = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+    public void Signup(View view)
+    {
+        Intent intent   = new Intent(this, SignUp.class);
         startActivity(intent);
     }
 

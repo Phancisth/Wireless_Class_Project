@@ -8,4 +8,5 @@
     <string name="grade_input_button">Grade Input</string>
     <string name="track_quiz_button">Track Questionnaire</string>
     <string name="logout_button">Logout</string>
+    <string name="SignUpButton">Signup, Click here !</string>
 </resources>
