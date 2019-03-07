@@ -20,7 +20,7 @@
             android:id="@+id/Application_Name"
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:text="TextView"
+            android:text="Home Page"
             android:textAlignment="center"
             android:textSize="36sp" />
 
@@ -54,19 +54,19 @@
                     android:id="@+id/studentName"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="TextView" />
+                    android:text="Name" />
 
                 <TextView
                     android:id="@+id/studentID"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="TextView" />
+                    android:text="ID" />
 
                 <TextView
                     android:id="@+id/studentYear"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="TextView" />
+                    android:text="Year" />
 
             </LinearLayout>
         </LinearLayout>
