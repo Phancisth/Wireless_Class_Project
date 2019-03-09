@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wireless_Class_Project</string>
+    <string name="My_Profile">โปรไฟล์</string>
+    <string name="UsernameHint">อีเมล</string>
+    <string name="PasswordHint">รหัสผ่าน</string>
+    <string name="LoginButton">เข้าสู่ระบบ</string>
+    <string name="comp_report_button">รีพอร์ท</string>
+    <string name="grade_input_button">เพิ่มข้อมูลเกรด</string>
+    <string name="track_quiz_button">แบบสอบถาม</string>
+    <string name="logout_button">ออกจากระบบ</string>
+    <string name="SignUpButton">ลงทะเบียน</string>
+    <string name="Create_Account_Button">สร้างบัญชี</string>
+    <string name="Already_Mem_Button">มีบัญชีแล้ว   เข้าสู่ระบบ</string>
+</resources>

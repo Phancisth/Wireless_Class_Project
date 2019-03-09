@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Wireless_Class_Project</string>
+    <string name="app_name" translatable="false">Wireless_Class_Project</string>
     <string name="My_Profile">My Profile</string>
-    <string name="UsernameHint">Username</string>
+    <string name="UsernameHint">Email</string>
     <string name="PasswordHint">Password</string>
     <string name="LoginButton">Login</string>
     <string name="comp_report_button">Competency Report</string>
@@ -9,4 +9,6 @@
     <string name="track_quiz_button">Track Questionnaire</string>
     <string name="logout_button">Logout</string>
     <string name="SignUpButton">Signup, Click here !</string>
+    <string name="Create_Account_Button">Create Account</string>
+    <string name="Already_Mem_Button">Already a member? Login</string>
 </resources>
