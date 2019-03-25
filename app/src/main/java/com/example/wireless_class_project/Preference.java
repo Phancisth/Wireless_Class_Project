@@ -27,6 +27,9 @@ public class Preference extends AppCompatActivity {
             Configuration conf = res.getConfiguration();
             conf.locale = myLocale;
             res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(this, MainActivity.class);
+            refresh.putExtra("Current_Language", "EN");
+            startActivity(refresh);
             finish();
         } else if (currentLocal == "th") {
             Locale myLocale = new Locale("en");
@@ -35,6 +38,9 @@ public class Preference extends AppCompatActivity {
             Configuration conf = res.getConfiguration();
             conf.locale = myLocale;
             res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(this, MainActivity.class);
+            refresh.putExtra("Current_Language", "TH");
+            startActivity(refresh);
             finish();
         }
     }

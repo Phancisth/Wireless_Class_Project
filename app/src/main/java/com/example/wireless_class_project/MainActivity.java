@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         LoginUsername = findViewById(R.id.Login_Username);
         LoginPassword = findViewById(R.id.Login_Password);
 
-        /*Language = findViewById(R.id.Language);
+        /*Language = findViewById(R.id.);
         if(getIntent().getStringExtra("Current_Language") == null)
         {
             Language.setText("TH");
