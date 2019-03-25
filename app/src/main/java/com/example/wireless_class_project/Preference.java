@@ -30,7 +30,7 @@ public class Preference extends AppCompatActivity {
             Intent refresh = new Intent(this, MainActivity.class);
             refresh.putExtra("Current_Language", "EN");
             startActivity(refresh);
-            finish();
+            finishAndRemoveTask();
         } else if (currentLocal == "th") {
             Locale myLocale = new Locale("en");
             Resources res = getResources();
@@ -41,7 +41,7 @@ public class Preference extends AppCompatActivity {
             Intent refresh = new Intent(this, MainActivity.class);
             refresh.putExtra("Current_Language", "TH");
             startActivity(refresh);
-            finish();
+            finishAndRemoveTask();
         }
     }
 }

@@ -14,7 +14,7 @@ public class GradeInput extends AppCompatActivity {
     }
     public void Logout(View view)
     {
-        finishAffinity();
+        finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

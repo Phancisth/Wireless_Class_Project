@@ -14,13 +14,13 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mAuth = FirebaseAuth.getInstance();
-        Intent intent = getIntent();
+        Intent intent = getIntent(); //?? Dont know why this is here
     }
 
     public void Logout(View view)
     {
         mAuth.signOut();
-        finish();
+        finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
