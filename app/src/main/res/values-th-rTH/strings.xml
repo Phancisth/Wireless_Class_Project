@@ -12,4 +12,7 @@
     <string name="SignUpButton">ลงทะเบียน</string>
     <string name="Create_Account_Button">สร้างบัญชี</string>
     <string name="Already_Mem_Button">มีบัญชีแล้ว   เข้าสู่ระบบ</string>
+    <string name="Preference">Preference</string>
+    <string name="Language">ไทย</string>
+    <string name="ChangeLan">เปลี่ยนภาษา</string>
 </resources>

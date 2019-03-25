@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
         LoginUsername = findViewById(R.id.Login_Username);
         LoginPassword = findViewById(R.id.Login_Password);
 
-        Language = findViewById(R.id.Language);
+        /*Language = findViewById(R.id.Language);
         if(getIntent().getStringExtra("Current_Language") == null)
         {
             Language.setText("TH");
         }
         else {
             Language.setText(getIntent().getStringExtra("Current_Language"));
-        }
+        }*/
     }
 
     public void Login(View view)
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent   = new Intent(this, SignUp.class);
         startActivity(intent);
     }
-    public void ChangeLanguage(View view)
+    /*public void ChangeLanguage(View view)
     {
         String currentLocal = Locale.getDefault().getLanguage();
         if(currentLocal == "en") {
@@ -116,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(refresh);
             finish();
         }
+    }*/
+    public void Preference(View view)
+    {
+        Intent intent = new Intent(MainActivity.this,Preference.class);
+        startActivity(intent);
     }
 
 }

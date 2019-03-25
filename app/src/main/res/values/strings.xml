@@ -11,4 +11,7 @@
     <string name="SignUpButton">Signup, Click here !</string>
     <string name="Create_Account_Button">Create Account</string>
     <string name="Already_Mem_Button">Already a member? Login</string>
+    <string name="Preference">Preference</string>
+    <string name="Language">English</string>
+    <string name="ChangeLan">Change Language</string>
 </resources>
