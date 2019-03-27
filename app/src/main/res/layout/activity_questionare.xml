@@ -21,9 +21,13 @@
     <LinearLayout
         android:layout_width="377dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="93dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView4"
@@ -37,8 +41,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Code_Questionaire"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
-        />
+            android:textSize="24sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup1"
@@ -49,13 +52,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radioButton11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Questionaire_1"
-                    android:onClick="checkButton"/>
+                    android:onClick="checkButton"
+                    android:text="@string/Questionaire_1" />
 
 
                 <RadioButton
@@ -63,9 +67,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radioButton_2"
                     android:onClick="checkButton"
-                    />
+                    android:text="@string/radioButton_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton13"
@@ -96,7 +99,6 @@
         </RadioGroup>
 
 
-
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
@@ -114,13 +116,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radioButton21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Questionaire_1"
-                    android:onClick="checkButton"/>
+                    android:onClick="checkButton"
+                    android:text="@string/Questionaire_1" />
 
 
                 <RadioButton
@@ -128,9 +131,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radioButton_2"
                     android:onClick="checkButton"
-                    />
+                    android:text="@string/radioButton_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton23"
@@ -177,13 +179,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radioButton31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Questionaire_1"
-                    android:onClick="checkButton"/>
+                    android:onClick="checkButton"
+                    android:text="@string/Questionaire_1" />
 
 
                 <RadioButton
@@ -191,9 +194,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radioButton_2"
                     android:onClick="checkButton"
-                    />
+                    android:text="@string/radioButton_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton33"
@@ -240,13 +242,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radioButton41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Questionaire_1"
-                    android:onClick="checkButton"/>
+                    android:onClick="checkButton"
+                    android:text="@string/Questionaire_1" />
 
 
                 <RadioButton
@@ -254,9 +257,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radioButton_2"
                     android:onClick="checkButton"
-                    />
+                    android:text="@string/radioButton_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton43"
@@ -303,13 +305,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/radioButton51"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/Questionaire_1"
-                    android:onClick="checkButton"/>
+                    android:onClick="checkButton"
+                    android:text="@string/Questionaire_1" />
 
 
                 <RadioButton
@@ -317,9 +320,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/radioButton_2"
                     android:onClick="checkButton"
-                    />
+                    android:text="@string/radioButton_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton53"

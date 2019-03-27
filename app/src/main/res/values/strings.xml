@@ -27,4 +27,5 @@
     <string name="Preference">Preference</string>
     <string name="Language">English</string>
     <string name="ChangeLan">Change Language</string>
+    <string name="StudentID">Student ID</string>
 </resources>
