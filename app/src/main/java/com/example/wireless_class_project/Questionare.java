@@ -16,12 +16,22 @@ public class Questionare extends AppCompatActivity {
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton radioButton;
     TextView textView;
-
+    private int CS,CN,SE,DB,HT,MM,EB,MS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
+
+        CS = 0;
+        CN = 0;
+        SE = 0;
+        DB = 0;
+        HT = 0;
+        MM = 0;
+        EB = 0;
+        MS = 0;
+
 
         radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup2 = findViewById(R.id.radioGroup2);
@@ -83,6 +93,8 @@ public class Questionare extends AppCompatActivity {
     }
 
     public void Next(View view) {
+
+        //Get some score here
 
         //Go the to the next page in the questionnaire
     }

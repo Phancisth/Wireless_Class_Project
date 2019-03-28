@@ -2,6 +2,7 @@ package com.example.wireless_class_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -46,16 +47,19 @@ public class SignUp extends AppCompatActivity {
     }
     public void Logout(View view)
     {
+        mAuth.signOut();
         finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void SignupButton(View view)
+    public void SignupButton(final View view)
     {
         emailin = findViewById(R.id.input_email);
         passwordin = findViewById(R.id.input_password);
+        studentIDin = findViewById(R.id.input_studentID);
         email = emailin.getText().toString();
         password = passwordin.getText().toString();
+        studentID = studentIDin.getText().toString();
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -66,26 +70,25 @@ public class SignUp extends AppCompatActivity {
                     //updateUI(user);
 
                     // Create a new user with a first and last name
-                    Map<String, Object> users = new HashMap<>();
-                    users.put("first", "Ada");
-                    users.put("last", "Lovelace");
-                    users.put("born", 1815);
+                    name = user.getUid();
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("UID", name);
+                    data.put("StudentID", studentID);
+
+
+                    db.collection("users").document(name).set(data);
+
+                    Toast.makeText(SignUp.this, "Succesfully Created an Account",
+                            Toast.LENGTH_SHORT).show();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Logout(view);
+                        }
+                    }, 3000);
 
 // Add a new document with a generated ID
-                    db.collection("users")
-                            .add(user)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w(TAG, "Error adding document", e);
-                                }
-                            });
 
 
 
