@@ -31,7 +31,7 @@ public class Questionare extends AppCompatActivity {
         Q4 = findViewById(R.id.Questionare_Q4);
         Q5 = findViewById(R.id.Questionare_Q5);
         switch(page)
-        {
+        {//Set the questions right here
             case 1:
                 Q1.setText("Hi");
                 Q2.setText("Hello");
@@ -107,12 +107,13 @@ public class Questionare extends AppCompatActivity {
 
         //Get some score here
         switch(page)
-        {//Work on it
-            case 1:
-            switch(checkButtonG1(view))
+        {
+            case 1://This is Page 1
+            switch(checkButtonG1(view))//This is Question 1
             {
                 case "1":
-
+                //According to the paper that we wrote
+                    Score[0] += 1;
                     break;
                 case "2":
 
@@ -127,7 +128,7 @@ public class Questionare extends AppCompatActivity {
 
                     break;
             }
-            switch(checkButtonG2(view))
+            switch(checkButtonG2(view))//This is Question 2
             {
                 case "1":
 
