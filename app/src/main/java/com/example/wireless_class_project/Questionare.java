@@ -457,6 +457,7 @@ public class Questionare extends AppCompatActivity {
         Intent nextpage = new Intent(this, Questionare.class);
         nextpage.putExtra("Score",Score);
         nextpage.putExtra("Page", page+1);
+        startActivity(nextpage);
 
     }
 
