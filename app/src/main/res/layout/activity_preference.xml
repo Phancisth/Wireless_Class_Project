@@ -54,5 +54,12 @@
             android:onClick="ChangeLanguage"
             android:text="@string/ChangeLan" />
 
+        <Button
+            android:id="@+id/Bypass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Bypass"
+            android:text="Bypass" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

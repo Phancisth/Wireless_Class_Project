@@ -18,6 +18,13 @@ public class Preference extends AppCompatActivity {
         setContentView(R.layout.activity_preference);
     }
 
+    public void Bypass(View view)
+    {
+        finishAndRemoveTask();
+        Intent intent = new Intent(Preference.this,HomePage.class);
+        startActivity(intent);
+    }
+
     public void ChangeLanguage(View view) {
         String currentLocal = Locale.getDefault().getLanguage();
         if (currentLocal == "en") {

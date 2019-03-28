@@ -17,6 +17,7 @@ public class Questionare extends AppCompatActivity {
     RadioButton radioButton;
     TextView textView;
     private int CS,CN,SE,DB,HT,MM,EB,MS;
+    private int page = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
