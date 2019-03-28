@@ -109,13 +109,373 @@ public class Questionare extends AppCompatActivity {
         switch(page)
         {
             case 1:
+            switch(checkButtonG1(view))
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+            }
+            switch(checkButtonG2(view))
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+            }
+            switch(checkButtonG3(view))
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+            }
+            switch(checkButtonG4(view))
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+            }
+            switch(checkButtonG5(view))
+            {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+                case "5":
+
+                    break;
+            }
 
                 break;
             case 2:
+                switch(checkButtonG1(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG2(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG3(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG4(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG5(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
                 break;
             case 3:
+                switch(checkButtonG1(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG2(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG3(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG4(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG5(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
                 break;
             case 4:
+                switch(checkButtonG1(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG2(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG3(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG4(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
+                switch(checkButtonG5(view))
+                {
+                    case "1":
+
+                        break;
+                    case "2":
+
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                }
                 break;
         }
         //Go the to the next page in the questionnaire
@@ -129,13 +489,50 @@ public class Questionare extends AppCompatActivity {
         //Go to the previous page in the questionnaire
     }
 
-    public CharSequence checkButton (View view) {
+    public String checkButtonG1 (View view) {
 
         int radioID = radioGroup1.getCheckedRadioButtonId();
         radioButton = findViewById(radioID);
         CharSequence radioButtonText = radioButton.getText();
 
-        return radioButtonText;
+        return radioButtonText.toString();
 
     }
+    public String checkButtonG2 (View view) {
+
+        int radioID = radioGroup2.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+        CharSequence radioButtonText = radioButton.getText();
+
+        return radioButtonText.toString();
+
+    }
+    public String checkButtonG3 (View view) {
+
+        int radioID = radioGroup3.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+        CharSequence radioButtonText = radioButton.getText();
+
+        return radioButtonText.toString();
+
+    }
+    public String checkButtonG4 (View view) {
+
+        int radioID = radioGroup4.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+        CharSequence radioButtonText = radioButton.getText();
+
+        return radioButtonText.toString();
+
+    }
+    public String checkButtonG5 (View view) {
+
+        int radioID = radioGroup5.getCheckedRadioButtonId();
+        radioButton = findViewById(radioID);
+        CharSequence radioButtonText = radioButton.getText();
+
+        return radioButtonText.toString();
+
+    }
+
 }
