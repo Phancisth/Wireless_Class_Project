@@ -1,12 +1,14 @@
 package com.example.wireless_class_project;
 
 import android.content.Intent;
+import android.graphics.pdf.PdfDocument;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +18,7 @@ public class Questionare extends AppCompatActivity {
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton radioButton;
     TextView textView;
-    private int CS,CN,SE,DB,HT,MM,EB,MS;
+    private int[] Score = new int[8];//CS,CN,SE,DB,HT,MM,EB,MS
     private int page = 0;
 
     @Override
@@ -24,15 +26,18 @@ public class Questionare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
 
-        CS = 0;
-        CN = 0;
-        SE = 0;
-        DB = 0;
-        HT = 0;
-        MM = 0;
-        EB = 0;
-        MS = 0;
+        switch(page)
+        {
+            case 1:
 
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
 
         radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup2 = findViewById(R.id.radioGroup2);
@@ -98,6 +103,10 @@ public class Questionare extends AppCompatActivity {
         //Get some score here
 
         //Go the to the next page in the questionnaire
+        Intent nextpage = new Intent(this, Questionare.class);
+        nextpage.putExtra("Score",Score);
+        nextpage.putExtra("Page", page);
+
     }
 
     public void Prev(View view) {
