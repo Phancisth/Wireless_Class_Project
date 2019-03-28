@@ -18,7 +18,7 @@ public class Questionare extends AppCompatActivity {
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton radioButton;
     TextView Q1,Q2,Q3,Q4,Q5;
-    private int[] Score = new int[8];//CS,CN,SE,DB,HT,MM,EB,MS
+    private int[] Score = new int[8];//CN,CS,DB,EB,HT,MM,MS,SE
     private int page = 1;
 
     @Override
@@ -30,17 +30,33 @@ public class Questionare extends AppCompatActivity {
         Q3 = findViewById(R.id.Questionare_Q3);
         Q4 = findViewById(R.id.Questionare_Q4);
         Q5 = findViewById(R.id.Questionare_Q5);
+
+            page = getIntent().getIntExtra("Page", 1);
+        if(page != 1) {
+            Score = getIntent().getIntArrayExtra("Score");
+        }
         switch(page)
         {//Set the questions right here
             case 1:
-                Q1.setText("Hi");
-                Q2.setText("Hello");
+                Q1.setText("Code");
+                Q2.setText("Math");
+                Q3.setText("Memorise");
+                Q4.setText("Research");
+                Q5.setText("Open-ended Question");
                 break;
             case 2:
+                Q1.setText("Reading");
+                Q2.setText("Hardware");
+                Q3.setText("Animation Drawing");
+                Q4.setText("Software Quality Checking");
+                Q5.setText("Broad Area of Knowledge");
                 break;
             case 3:
-                break;
-            case 4:
+                Q1.setText("Managing Data");
+                Q2.setText("Networking");
+                Q3.setText("Like Management");
+                Q4.setText("Like Business/Start Up");
+                Q5.setText("Health Science");
                 break;
         }
 
@@ -109,372 +125,330 @@ public class Questionare extends AppCompatActivity {
         switch(page)
         {
             case 1://This is Page 1
-            switch(checkButtonG1(view))//This is Question 1
+            switch(checkButtonG1(view))// Q1: Like Code?
             {
                 case "1":
                 //According to the paper that we wrote
+                    //index of Score[]: 0=CN,1=CS,2=DB,3=EB,4=HT,5=MM,6=MS,7=SE
+                    Score[6] += 1;
+                    break;
+
+                case "2":
+                    Score[4] += 1;
+                    break;
+
+                case "3":
+                    Score[3] += 1;
+                    Score[7] += 1;
+                    break;
+
+                case "4":
                     Score[0] += 1;
+                    Score[2] += 1;
                     break;
-                case "2":
 
-                    break;
-                case "3":
-
-                    break;
-                case "4":
-
-                    break;
                 case "5":
-
+                    Score[1] += 1;
+                    Score[5] += 1;
                     break;
             }
-            switch(checkButtonG2(view))//This is Question 2
+            switch(checkButtonG2(view))//Q2: Like math?
             {
                 case "1":
-
+                    Score[6] += 1;
                     break;
+
                 case "2":
-
+                    Score[2] += 1;
+                    Score[4] += 1;
                     break;
+
                 case "3":
-
+                    Score[0] += 1;
+                    Score[3] += 1;
                     break;
+
                 case "4":
-
+                    Score[5] += 1;
+                    Score[7] += 1;
                     break;
-                case "5":
 
+                case "5":
+                    Score[1] += 1;
                     break;
             }
-            switch(checkButtonG3(view))
+            switch(checkButtonG3(view))//Q3: Memorize?
             {
                 case "1":
-
+                    Score[3] += 1;
+                    Score[1] += 1;
+                    Score[6] += 1;
                     break;
+
                 case "2":
-
+                    Score[2] += 1;
                     break;
+
                 case "3":
-
+                    Score[5] += 1;
+                    Score[7] += 1;
                     break;
+
                 case "4":
-
+                    Score[6] += 1;
                     break;
-                case "5":
 
+                case "5":
+                    Score[4] += 1;
                     break;
             }
-            switch(checkButtonG4(view))
+            switch(checkButtonG4(view))//Q4: Research?
             {
                 case "1":
-
+                    Score[3] += 1;
                     break;
+
                 case "2":
-
+                    Score[5] += 1;
+                    Score[6] += 1;
                     break;
+
                 case "3":
-
+                    Score[0] += 1;
+                    Score[2] += 1;
                     break;
+
                 case "4":
-
+                    Score[4] += 1;
+                    Score[7] += 1;
                     break;
-                case "5":
 
+                case "5":
+                    Score[1] += 1;
                     break;
             }
-            switch(checkButtonG5(view))
+            switch(checkButtonG5(view))// Q5: Open-ended?
             {
                 case "1":
-
+                    Score[0] += 1;
+                    Score[1] += 1;
                     break;
+
                 case "2":
-
+                    Score[2] += 1;
                     break;
+
                 case "3":
-
+                    Score[4] += 1;
+                    Score[7] += 1;
                     break;
+
                 case "4":
-
+                    Score[5] += 1;
                     break;
-                case "5":
 
+                case "5":
+                    Score[3] += 1;
+                    Score[6] += 1;
                     break;
             }
 
                 break;
             case 2:
-                switch(checkButtonG1(view))
+                switch(checkButtonG1(view))// Q6: Reading?
                 {
                     case "1":
-
+                        Score[5] += 1;
                         break;
+
                     case "2":
-
+                        Score[0] += 1;
                         break;
+
                     case "3":
-
+                        Score[7] += 1;
                         break;
+
                     case "4":
-
+                        Score[1] += 1;
+                        Score[2] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[3] += 1;
+                        Score[4] += 1;
+                        Score[6] += 1;
                         break;
                 }
-                switch(checkButtonG2(view))
+                switch(checkButtonG2(view))//Q7: Hardware?
                 {
                     case "1":
-
+                        Score[2] += 1;
+                        Score[7] += 1;
                         break;
+
                     case "2":
-
+                        Score[3] += 1;
+                        Score[5] += 1;
                         break;
+
                     case "3":
-
+                        Score[6] += 1;
                         break;
+
                     case "4":
-
+                        Score[4] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[0] += 1;
+                        Score[1] += 1;
                         break;
                 }
-                switch(checkButtonG3(view))
+                switch(checkButtonG3(view))// Q8:MM
                 {
                     case "1":
-
+                        Score[5] -= 3;
                         break;
+
                     case "2":
-
+                        Score[5] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[5] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[5] += 3;
                         break;
                 }
-                switch(checkButtonG4(view))
+                switch(checkButtonG4(view))//Q9:SE
                 {
                     case "1":
-
+                        Score[7] -= 3;
                         break;
+
                     case "2":
-
+                        Score[7] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[7] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[7] += 3;
                         break;
                 }
-                switch(checkButtonG5(view))
+                switch(checkButtonG5(view))//Q10:CS
                 {
                     case "1":
-
+                        Score[1] -= 3;
                         break;
+
                     case "2":
-
+                        Score[1] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[1] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[1] += 3;
                         break;
                 }
                 break;
             case 3:
-                switch(checkButtonG1(view))
+                switch(checkButtonG1(view))//Q11: DB
                 {
                     case "1":
-
+                        Score[2] -= 3;
                         break;
+
                     case "2":
-
+                        Score[2] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[2] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[2] += 3;
                         break;
                 }
-                switch(checkButtonG2(view))
+                switch(checkButtonG2(view))//Q12:CN
                 {
                     case "1":
-
+                        Score[0] -= 3;
                         break;
+
                     case "2":
-
+                        Score[0] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[0] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[0] += 3;
                         break;
                 }
-                switch(checkButtonG3(view))
+                switch(checkButtonG3(view))//Q13: MS
                 {
                     case "1":
-
+                        Score[6] -= 3;
                         break;
+
                     case "2":
-
+                        Score[6] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[6] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[6] += 3;
                         break;
                 }
-                switch(checkButtonG4(view))
+                switch(checkButtonG4(view))//Q14: EB
                 {
                     case "1":
-
+                        Score[3] -= 3;
                         break;
+
                     case "2":
-
+                        Score[3] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[3] += 1;
                         break;
-                    case "5":
 
+                    case "5":
+                        Score[3] += 3;
                         break;
                 }
-                switch(checkButtonG5(view))
+                switch(checkButtonG5(view))//Q15: HT
                 {
                     case "1":
-
+                        Score[4] -= 3;
                         break;
+
                     case "2":
-
+                        Score[4] -= 1;
                         break;
-                    case "3":
 
-                        break;
                     case "4":
-
+                        Score[4] += 1;
                         break;
+
                     case "5":
-
-                        break;
-                }
-                break;
-            case 4:
-                switch(checkButtonG1(view))
-                {
-                    case "1":
-
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                    case "4":
-
-                        break;
-                    case "5":
-
-                        break;
-                }
-                switch(checkButtonG2(view))
-                {
-                    case "1":
-
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                    case "4":
-
-                        break;
-                    case "5":
-
-                        break;
-                }
-                switch(checkButtonG3(view))
-                {
-                    case "1":
-
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                    case "4":
-
-                        break;
-                    case "5":
-
-                        break;
-                }
-                switch(checkButtonG4(view))
-                {
-                    case "1":
-
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                    case "4":
-
-                        break;
-                    case "5":
-
-                        break;
-                }
-                switch(checkButtonG5(view))
-                {
-                    case "1":
-
-                        break;
-                    case "2":
-
-                        break;
-                    case "3":
-
-                        break;
-                    case "4":
-
-                        break;
-                    case "5":
-
+                        Score[4] += 3;
                         break;
                 }
                 break;
@@ -482,12 +456,17 @@ public class Questionare extends AppCompatActivity {
         //Go the to the next page in the questionnaire
         Intent nextpage = new Intent(this, Questionare.class);
         nextpage.putExtra("Score",Score);
-        nextpage.putExtra("Page", page);
+        nextpage.putExtra("Page", page+1);
+        startActivity(nextpage);
 
     }
 
     public void Prev(View view) {
-        //Go to the previous page in the questionnaire
+        //Go to the previous page in the questionnaire Nahhhh Reset this whole thing
+        //Make it a button that links to a page where the users can check the past results and other shit
+        finishAndRemoveTask();
+        Intent restart = new Intent(this,Questionare.class);
+        startActivity(restart);
     }
 
     public String checkButtonG1 (View view) {
