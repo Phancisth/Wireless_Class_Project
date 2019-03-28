@@ -17,19 +17,24 @@ public class Questionare extends AppCompatActivity {
 
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton radioButton;
-    TextView textView;
+    TextView Q1,Q2,Q3,Q4,Q5;
     private int[] Score = new int[8];//CS,CN,SE,DB,HT,MM,EB,MS
-    private int page = 0;
+    private int page = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
-
+        Q1 = findViewById(R.id.Questionare_Q1);
+        Q2 = findViewById(R.id.Questionare_Q2);
+        Q3 = findViewById(R.id.Questionare_Q3);
+        Q4 = findViewById(R.id.Questionare_Q4);
+        Q5 = findViewById(R.id.Questionare_Q5);
         switch(page)
         {
             case 1:
-
+                Q1.setText("Hi");
+                Q2.setText("Hello");
                 break;
             case 2:
                 break;
@@ -62,7 +67,7 @@ public class Questionare extends AppCompatActivity {
         applyButtonGroup2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int radioID = radioGroup1.getCheckedRadioButtonId();
+                int radioID = radioGroup2.getCheckedRadioButtonId();
                 radioButton = findViewById(radioID);
             }
         });
@@ -70,7 +75,7 @@ public class Questionare extends AppCompatActivity {
         applyButtonGroup3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int radioID = radioGroup1.getCheckedRadioButtonId();
+                int radioID = radioGroup3.getCheckedRadioButtonId();
                 radioButton = findViewById(radioID);
             }
         });
@@ -78,7 +83,7 @@ public class Questionare extends AppCompatActivity {
         applyButtonGroup4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int radioID = radioGroup1.getCheckedRadioButtonId();
+                int radioID = radioGroup4.getCheckedRadioButtonId();
                 radioButton = findViewById(radioID);
             }
         });
@@ -86,7 +91,7 @@ public class Questionare extends AppCompatActivity {
         applyButtonGroup5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int radioID = radioGroup1.getCheckedRadioButtonId();
+                int radioID = radioGroup5.getCheckedRadioButtonId();
                 radioButton = findViewById(radioID);
             }
         });
@@ -101,7 +106,18 @@ public class Questionare extends AppCompatActivity {
     public void Next(View view) {
 
         //Get some score here
+        switch(page)
+        {
+            case 1:
 
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
         //Go the to the next page in the questionnaire
         Intent nextpage = new Intent(this, Questionare.class);
         nextpage.putExtra("Score",Score);
