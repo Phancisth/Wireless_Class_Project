@@ -30,6 +30,11 @@ public class Questionare extends AppCompatActivity {
         Q3 = findViewById(R.id.Questionare_Q3);
         Q4 = findViewById(R.id.Questionare_Q4);
         Q5 = findViewById(R.id.Questionare_Q5);
+
+            page = getIntent().getIntExtra("Page", 1);
+        if(page != 1) {
+            Score = getIntent().getIntArrayExtra("Score");
+        }
         switch(page)
         {//Set the questions right here
             case 1:
@@ -451,12 +456,16 @@ public class Questionare extends AppCompatActivity {
         //Go the to the next page in the questionnaire
         Intent nextpage = new Intent(this, Questionare.class);
         nextpage.putExtra("Score",Score);
-        nextpage.putExtra("Page", page);
+        nextpage.putExtra("Page", page+1);
 
     }
 
     public void Prev(View view) {
-        //Go to the previous page in the questionnaire
+        //Go to the previous page in the questionnaire Nahhhh Reset this whole thing
+        //Make it a button that links to a page where the users can check the past results and other shit
+        finishAndRemoveTask();
+        Intent restart = new Intent(this,Questionare.class);
+        startActivity(restart);
     }
 
     public String checkButtonG1 (View view) {
