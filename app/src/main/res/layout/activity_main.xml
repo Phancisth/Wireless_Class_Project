@@ -65,8 +65,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Login_Button" />
 
-    <Button
-        android:id="@+id/Preference"
+    <!--  <Button
+    android:id="@+id/Preference"
+    android:layout_width="45dp"
+    android:layout_height="42dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+    android:onClick="Preference"
+    android:text="@string/Preference"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" /> -->
+
+
+    <ImageButton
+        android:id="@+id/Preference2"
         android:layout_width="45dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
@@ -75,6 +89,7 @@
         android:inputType="textPersonName"
         android:onClick="Preference"
         android:text="@string/Preference"
+        android:src="@drawable/setting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
