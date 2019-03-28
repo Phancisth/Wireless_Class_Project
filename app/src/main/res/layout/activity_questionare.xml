@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="checkButton"
-                    android:text="@string/radioButton_2" />
+                    android:text="@string/Questionaire_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton13"
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="checkButton"
-                    android:text="@string/radioButton_2" />
+                    android:text="@string/Questionaire_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton23"
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="checkButton"
-                    android:text="@string/radioButton_2" />
+                    android:text="@string/Questionaire_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton33"
@@ -258,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="checkButton"
-                    android:text="@string/radioButton_2" />
+                    android:text="@string/Questionaire_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton43"
@@ -321,7 +321,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="checkButton"
-                    android:text="@string/radioButton_2" />
+                    android:text="@string/Questionaire_2" />
 
                 <RadioButton
                     android:id="@+id/radioButton53"
