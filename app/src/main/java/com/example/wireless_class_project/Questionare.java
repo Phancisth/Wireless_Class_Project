@@ -107,7 +107,7 @@ public class Questionare extends AppCompatActivity {
 
         //Get some score here
         switch(page)
-        {
+        {//Work on it
             case 1:
             switch(checkButtonG1(view))
             {
