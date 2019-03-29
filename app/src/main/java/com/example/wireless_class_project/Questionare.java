@@ -16,7 +16,8 @@ public class Questionare extends AppCompatActivity {
 
 
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
-    RadioButton radioButton;
+    RadioButton checkedRadioButtonG1, checkedRadioButtonG2, checkedRadioButtonG3, checkedRadioButtonG4, checkedRadioButtonG5;
+
     TextView Q1,Q2,Q3,Q4,Q5;
     private int[] Score = new int[8];//CN,CS,DB,EB,HT,MM,MS,SE
     private int page = 1;
@@ -30,6 +31,34 @@ public class Questionare extends AppCompatActivity {
         Q3 = findViewById(R.id.Questionare_Q3);
         Q4 = findViewById(R.id.Questionare_Q4);
         Q5 = findViewById(R.id.Questionare_Q5);
+
+        Button nextButton = findViewById(R.id.next);
+        Button prevButton = findViewById(R.id.prev);
+        Button logOutButton = findViewById(R.id.log_out);
+
+        //Listener for 'Next' button
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Next(v);
+            }
+        });
+
+        //Listener for 'Previous' button
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Prev(v);
+            }
+        });
+
+        //Listener for 'Log out' button
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout(v);
+            }
+        });
 
             page = getIntent().getIntExtra("Page", 1);
         if(page != 1) {
@@ -209,7 +238,7 @@ public class Questionare extends AppCompatActivity {
             }
 
                 break;
-            case 2:
+            case 2: //Questionnaire Page 2
                 switch(checkButtonG1(view))// Q6: Reading?
                 {
                     case "1":
@@ -315,7 +344,7 @@ public class Questionare extends AppCompatActivity {
                         break;
                 }
                 break;
-            case 3:
+            case 3: //Questionnaire Page 3
                 switch(checkButtonG1(view))//Q11: DB
                 {
                     case "1":
@@ -427,8 +456,8 @@ public class Questionare extends AppCompatActivity {
     public String checkButtonG1 (View view) {
 
         int radioID = radioGroup1.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        CharSequence radioButtonText = radioButton.getText();
+        checkedRadioButtonG1 = findViewById(radioID);
+        CharSequence radioButtonText = checkedRadioButtonG1.getText();
 
         return radioButtonText.toString();
 
@@ -436,8 +465,8 @@ public class Questionare extends AppCompatActivity {
     public String checkButtonG2 (View view) {
 
         int radioID = radioGroup2.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        CharSequence radioButtonText = radioButton.getText();
+        checkedRadioButtonG2 = findViewById(radioID);
+        CharSequence radioButtonText = checkedRadioButtonG2.getText();
 
         return radioButtonText.toString();
 
@@ -445,8 +474,8 @@ public class Questionare extends AppCompatActivity {
     public String checkButtonG3 (View view) {
 
         int radioID = radioGroup3.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        CharSequence radioButtonText = radioButton.getText();
+        checkedRadioButtonG3 = findViewById(radioID);
+        CharSequence radioButtonText = checkedRadioButtonG3.getText();
 
         return radioButtonText.toString();
 
@@ -454,8 +483,8 @@ public class Questionare extends AppCompatActivity {
     public String checkButtonG4 (View view) {
 
         int radioID = radioGroup4.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        CharSequence radioButtonText = radioButton.getText();
+        checkedRadioButtonG4 = findViewById(radioID);
+        CharSequence radioButtonText = checkedRadioButtonG4.getText();
 
         return radioButtonText.toString();
 
@@ -463,8 +492,8 @@ public class Questionare extends AppCompatActivity {
     public String checkButtonG5 (View view) {
 
         int radioID = radioGroup5.getCheckedRadioButtonId();
-        radioButton = findViewById(radioID);
-        CharSequence radioButtonText = radioButton.getText();
+        checkedRadioButtonG5 = findViewById(radioID);
+        CharSequence radioButtonText = checkedRadioButtonG5.getText();
 
         return radioButtonText.toString();
 
