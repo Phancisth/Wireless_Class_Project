@@ -475,7 +475,8 @@ public class Questionare extends AppCompatActivity {
 
         int radioID = radioGroup3.getCheckedRadioButtonId();
         checkedRadioButtonG3 = findViewById(radioID);
-        CharSequence radioButtonText = checkedRadioButtonG3.getText();
+        CharSequence radioButtonText;
+        radioButtonText = checkedRadioButtonG3.getText();
 
         return radioButtonText.toString();
 
