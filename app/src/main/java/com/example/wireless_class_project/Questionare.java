@@ -66,51 +66,6 @@ public class Questionare extends AppCompatActivity {
         radioGroup4 = findViewById(R.id.radioGroup4);
         radioGroup5 = findViewById(R.id.radioGroup5);
 
-        Button applyButtonGroup1 = findViewById(R.id.radioButton11);
-        Button applyButtonGroup2 = findViewById(R.id.radioButton21);
-        Button applyButtonGroup3 = findViewById(R.id.radioButton31);
-        Button applyButtonGroup4 = findViewById(R.id.radioButton41);
-        Button applyButtonGroup5 = findViewById(R.id.radioButton51);
-
-        applyButtonGroup1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup1.getCheckedRadioButtonId();
-                radioButton = findViewById(radioID);
-            }
-        });
-
-        applyButtonGroup2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup2.getCheckedRadioButtonId();
-                radioButton = findViewById(radioID);
-            }
-        });
-
-        applyButtonGroup3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup3.getCheckedRadioButtonId();
-                radioButton = findViewById(radioID);
-            }
-        });
-
-        applyButtonGroup4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup4.getCheckedRadioButtonId();
-                radioButton = findViewById(radioID);
-            }
-        });
-
-        applyButtonGroup5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioID = radioGroup5.getCheckedRadioButtonId();
-                radioButton = findViewById(radioID);
-            }
-        });
     }
     public void Logout(View view)
     {
