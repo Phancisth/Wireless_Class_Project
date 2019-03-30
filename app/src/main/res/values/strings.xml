@@ -23,7 +23,7 @@
     <string name="Questionnaire_Memorise">Memorise</string>
     <string name="Questionnaire_OpenEnd">Open-end Question</string>
     <string name="Questionnaire_Next">Next</string>
-    <string name="Questionnaire_Previous">Previous</string>
+    <string name="Questionnaire_Previous">Reset</string>
     <string name="Preference">Preference</string>
     <string name="Language">English</string>
     <string name="ChangeLan">Change Language</string>

@@ -17,9 +17,9 @@ public class Questionare extends AppCompatActivity {
 
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton checkedRadioButtonG1, checkedRadioButtonG2, checkedRadioButtonG3, checkedRadioButtonG4, checkedRadioButtonG5;
-
+    Button nextButton;
     TextView Q1,Q2,Q3,Q4,Q5;
-    private int[] Score = new int[8];//CN,CS,DB,EB,HT,MM,MS,SE
+    private int[] Score = new int[8];//0=CN,1=CS,2=DB,3=EB,4=HT,5=MM,6=MS,7=SE
     private int page = 1;
 
     @Override
@@ -32,7 +32,7 @@ public class Questionare extends AppCompatActivity {
         Q4 = findViewById(R.id.Questionare_Q4);
         Q5 = findViewById(R.id.Questionare_Q5);
 
-        Button nextButton = findViewById(R.id.next);
+        nextButton = findViewById(R.id.next);
         Button prevButton = findViewById(R.id.prev);
         Button logOutButton = findViewById(R.id.log_out);
 
@@ -86,6 +86,12 @@ public class Questionare extends AppCompatActivity {
                 Q3.setText("Like Management");
                 Q4.setText("Like Business/Start Up");
                 Q5.setText("Health Science");
+                nextButton.setText("Submit");
+                break;
+            case 4:
+                Intent resultisago = new Intent(this, QuestionareResult.class);
+                resultisago.putExtra("Score",Score);
+                startActivity(resultisago);
                 break;
         }
 
@@ -345,6 +351,7 @@ public class Questionare extends AppCompatActivity {
                 }
                 break;
             case 3: //Questionnaire Page 3
+
                 switch(checkButtonG1(view))//Q11: DB
                 {
                     case "1":
@@ -435,12 +442,14 @@ public class Questionare extends AppCompatActivity {
                         Score[4] += 3;
                         break;
                 }
+
                 break;
         }
         //Go the to the next page in the questionnaire
         Intent nextpage = new Intent(this, Questionare.class);
         nextpage.putExtra("Score",Score);
         nextpage.putExtra("Page", page+1);
+        System.out.println(page+" "+"/n"+"Score "+Score[0]+" "+Score[1]+" "+Score[2]+" "+Score[3]+" "+Score[4]+" "+Score[5]+" "+Score[6]+" "+Score[7]+" /n");
         startActivity(nextpage);
 
     }
