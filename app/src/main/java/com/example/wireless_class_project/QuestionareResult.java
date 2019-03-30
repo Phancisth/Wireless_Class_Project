@@ -7,9 +7,19 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class QuestionareResult extends AppCompatActivity {
     private int Score[] = new int[8];
     private TextView ShowTrack;
+    private FirebaseFirestore db;
+    private String name;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +36,7 @@ public class QuestionareResult extends AppCompatActivity {
                 trackchosen = i;
             }
         }
+
         switch(trackchosen)
         {//0=CN,1=CS,2=DB,3=EB,4=HT,5=MM,6=MS,7=SE
             case 0:
@@ -54,6 +65,18 @@ public class QuestionareResult extends AppCompatActivity {
                 break;
 
         }
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        name = user.getUid();
+        Map<String, Object> data = new HashMap<>();
+        data.put("Recom_Track", ShowTrack.getText().toString());
+
+
+
+        db.collection("users").document(name).set(data);
+
     }
 
     public void Prev(View view) {
