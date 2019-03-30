@@ -3,14 +3,11 @@
 Just a college project that is really boring 
 
 ## New Features!
-Added UID on signup
-Connectedto DB
+Now has a dank QUESTION Stuff that show results
 
 ## Warnings
-Glitches may occur
-to fix make sure all are done
--   Update Android Studio
--   Pull the whole project 
+NOPE NOTHING NO WARNINGS
+JUST Check all RADIO OR GLITCHS
 
 #### Got anymore problems ???
 Just ask Don
