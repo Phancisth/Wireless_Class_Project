@@ -5,16 +5,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomePage extends AppCompatActivity {
     private FirebaseAuth mAuth;
+
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
-        Intent intent = getIntent(); //?? Dont know why this is here
+        db = FirebaseFirestore.getInstance();
+        //Intent intent = getIntent(); //?? Dont know why this is here
     }
 
     public void Logout(View view)
