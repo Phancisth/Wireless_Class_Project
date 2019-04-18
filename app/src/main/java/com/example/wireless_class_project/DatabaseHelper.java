@@ -27,7 +27,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "user_id_grades";
     private static final String COL1 = "ID";
     private static final String COL2 = "name";
-<<<<<<< HEAD
     private static final String COL3 = "ITCS175";       //Advanced Math
     private static final String COL4 = "ITCS200";       //Fund. Program
     private static final String COL5 = "ITCS320";       //Discrete Structure
@@ -50,12 +49,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL22 = "ITCS420";      //Computer Network
     private static final String COL23 = "ITCS443";      //Parallel and Distributed Sys.
     private static final String COL24 = "ITCS451";      //AI
-=======
     private static final String grade1 = "MM";
 
     private String UserID;
 
->>>>>>> 500b4fcf2771b4511a55f678fbd84b1710fe2ec7
+
 
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
@@ -63,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-<<<<<<< HEAD
+
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL2 + " TEXT, " +
                 COL3 + " INTEGER, " +
@@ -88,10 +86,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL22 + " INTEGER, " +
                 COL23 + " INTEGER, " +
                 COL24 + " INTEGER)" ;
-=======
-        String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT , " +
-                COL2 +" TEXT ,"+grade1 +" INTEGER)";
->>>>>>> 500b4fcf2771b4511a55f678fbd84b1710fe2ec7
+
+
         db.execSQL(createTable);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
