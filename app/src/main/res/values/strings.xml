@@ -28,4 +28,14 @@
     <string name="Language">English</string>
     <string name="ChangeLan">Change Language</string>
     <string name="StudentID">Student ID</string>
+    <string name="CompetencyHead">Competency Report</string>
+    <string name="BarchartDesc">Competency Barchart</string>
+    <string name="TrackRank">Track Ranking</string>
+    <string name="Track1">TrackNumberOne</string>
+    <string name="Track2">TrackNumberTwo</string>
+    <string name="Track3">TrackNumberThree</string>
+    <string name="NO4">4.</string>
+    <string name="Track4">TrackNumberFour</string>
+    <string name="QuestionnaireResult">Latest Questionnaire Result</string>
+    <string name="TrackName">Software Engineer</string>
 </resources>
