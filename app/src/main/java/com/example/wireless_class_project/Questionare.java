@@ -89,9 +89,11 @@ public class Questionare extends AppCompatActivity {
                 nextButton.setText("Submit");
                 break;
             case 4:
+                finishAndRemoveTask();
                 Intent resultisago = new Intent(this, QuestionareResult.class);
                 resultisago.putExtra("Score",Score);
                 startActivity(resultisago);
+                finishAndRemoveTask();
                 break;
         }
 
@@ -110,13 +112,16 @@ public class Questionare extends AppCompatActivity {
     }
 
     public void Next(View view) {
-
+    int passable = 1;
         //Get some score here
         switch(page)
         {
             case 1://This is Page 1
             switch(checkButtonG1(view))// Q1: Like Code?
             {
+                case "0":
+                    passable = 0;
+                    break;
                 case "1":
                 //According to the paper that we wrote
                     //index of Score[]: 0=CN,1=CS,2=DB,3=EB,4=HT,5=MM,6=MS,7=SE
@@ -144,6 +149,9 @@ public class Questionare extends AppCompatActivity {
             }
             switch(checkButtonG2(view))//Q2: Like math?
             {
+                case "0":
+                    passable = 0;
+                    break;
                 case "1":
                     Score[6] += 1;
                     break;
@@ -169,6 +177,9 @@ public class Questionare extends AppCompatActivity {
             }
             switch(checkButtonG3(view))//Q3: Memorize?
             {
+                case "0":
+                    passable = 0;
+                    break;
                 case "1":
                     Score[3] += 1;
                     Score[1] += 1;
@@ -194,6 +205,9 @@ public class Questionare extends AppCompatActivity {
             }
             switch(checkButtonG4(view))//Q4: Research?
             {
+                case "0":
+                    passable = 0;
+                    break;
                 case "1":
                     Score[3] += 1;
                     break;
@@ -219,6 +233,9 @@ public class Questionare extends AppCompatActivity {
             }
             switch(checkButtonG5(view))// Q5: Open-ended?
             {
+                case "0":
+                    passable = 0;
+                    break;
                 case "1":
                     Score[0] += 1;
                     Score[1] += 1;
@@ -247,6 +264,9 @@ public class Questionare extends AppCompatActivity {
             case 2: //Questionnaire Page 2
                 switch(checkButtonG1(view))// Q6: Reading?
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[5] += 1;
                         break;
@@ -272,6 +292,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG2(view))//Q7: Hardware?
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[2] += 1;
                         Score[7] += 1;
@@ -297,6 +320,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG3(view))// Q8:MM
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[5] -= 3;
                         break;
@@ -315,6 +341,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG4(view))//Q9:SE
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[7] -= 3;
                         break;
@@ -333,6 +362,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG5(view))//Q10:CS
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[1] -= 3;
                         break;
@@ -354,6 +386,9 @@ public class Questionare extends AppCompatActivity {
 
                 switch(checkButtonG1(view))//Q11: DB
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[2] -= 3;
                         break;
@@ -372,6 +407,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG2(view))//Q12:CN
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[0] -= 3;
                         break;
@@ -390,6 +428,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG3(view))//Q13: MS
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[6] -= 3;
                         break;
@@ -408,6 +449,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG4(view))//Q14: EB
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[3] -= 3;
                         break;
@@ -426,6 +470,9 @@ public class Questionare extends AppCompatActivity {
                 }
                 switch(checkButtonG5(view))//Q15: HT
                 {
+                    case "0":
+                        passable = 0;
+                        break;
                     case "1":
                         Score[4] -= 3;
                         break;
@@ -446,11 +493,22 @@ public class Questionare extends AppCompatActivity {
                 break;
         }
         //Go the to the next page in the questionnaire
-        Intent nextpage = new Intent(this, Questionare.class);
-        nextpage.putExtra("Score",Score);
-        nextpage.putExtra("Page", page+1);
-        System.out.println(page+" "+"/n"+"Score "+Score[0]+" "+Score[1]+" "+Score[2]+" "+Score[3]+" "+Score[4]+" "+Score[5]+" "+Score[6]+" "+Score[7]+" /n");
-        startActivity(nextpage);
+        if(passable == 1) {
+            Intent nextpage = new Intent(this, Questionare.class);
+            nextpage.putExtra("Score", Score);
+            nextpage.putExtra("Page", page + 1);
+            System.out.println(page + " " + "/n" + "Score " + Score[0] + " " + Score[1] + " " + Score[2] + " " + Score[3] + " " + Score[4] + " " + Score[5] + " " + Score[6] + " " + Score[7] + " /n");
+            startActivity(nextpage);
+        }
+        else
+        {
+            //Nothing The page is still
+            Toast.makeText(Questionare.this,"Please Answer All Questions", Toast.LENGTH_SHORT).show();
+            for(int i=0;i<8;i++)
+            {
+                Score[i] = 0;
+            }
+        }
 
     }
 
@@ -466,46 +524,84 @@ public class Questionare extends AppCompatActivity {
 
         int radioID = radioGroup1.getCheckedRadioButtonId();
         checkedRadioButtonG1 = findViewById(radioID);
-        CharSequence radioButtonText = checkedRadioButtonG1.getText();
+        if(checkedRadioButtonG1 == null)
+        {
 
-        return radioButtonText.toString();
 
+        }
+        else {
+            CharSequence radioButtonText = checkedRadioButtonG1.getText();
+
+            return radioButtonText.toString();
+        }
+        return "0";
     }
     public String checkButtonG2 (View view) {
 
         int radioID = radioGroup2.getCheckedRadioButtonId();
         checkedRadioButtonG2 = findViewById(radioID);
-        CharSequence radioButtonText = checkedRadioButtonG2.getText();
+        if(checkedRadioButtonG2 == null)
+        {
 
-        return radioButtonText.toString();
+
+        }
+        else {
+            CharSequence radioButtonText = checkedRadioButtonG2.getText();
+
+            return radioButtonText.toString();
+        }
+        return "0";
 
     }
     public String checkButtonG3 (View view) {
 
         int radioID = radioGroup3.getCheckedRadioButtonId();
         checkedRadioButtonG3 = findViewById(radioID);
-        CharSequence radioButtonText;
-        radioButtonText = checkedRadioButtonG3.getText();
+        if(checkedRadioButtonG3 == null)
+        {
 
-        return radioButtonText.toString();
+
+        }
+        else {
+            CharSequence radioButtonText = checkedRadioButtonG3.getText();
+
+            return radioButtonText.toString();
+        }
+        return "0";
 
     }
     public String checkButtonG4 (View view) {
 
         int radioID = radioGroup4.getCheckedRadioButtonId();
         checkedRadioButtonG4 = findViewById(radioID);
-        CharSequence radioButtonText = checkedRadioButtonG4.getText();
+        if(checkedRadioButtonG4 == null)
+        {
 
-        return radioButtonText.toString();
+
+        }
+        else {
+            CharSequence radioButtonText = checkedRadioButtonG4.getText();
+
+            return radioButtonText.toString();
+        }
+        return "0";
 
     }
     public String checkButtonG5 (View view) {
 
         int radioID = radioGroup5.getCheckedRadioButtonId();
         checkedRadioButtonG5 = findViewById(radioID);
-        CharSequence radioButtonText = checkedRadioButtonG5.getText();
+        if(checkedRadioButtonG5 == null)
+        {
 
-        return radioButtonText.toString();
+
+        }
+        else {
+            CharSequence radioButtonText = checkedRadioButtonG5.getText();
+
+            return radioButtonText.toString();
+        }
+        return "0";
 
     }
 
