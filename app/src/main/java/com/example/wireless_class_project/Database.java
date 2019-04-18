@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class Database extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Database";
 
     DatabaseHelper mDatabaseHelper;
     private Button btnAdd, btnViewData;

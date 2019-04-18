@@ -44,6 +44,8 @@ public class SignUp extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+
     }
     public void Logout(View view)
     {
@@ -60,50 +62,55 @@ public class SignUp extends AppCompatActivity {
         email = emailin.getText().toString();
         password = passwordin.getText().toString();
         studentID = studentIDin.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    //updateUI(user);
+        if(email.isEmpty() || password.isEmpty() || studentID.isEmpty())
+        {
+            Toast.makeText(SignUp.this,"Please Enter all the needed information", Toast.LENGTH_SHORT).show();
 
-                    // Create a new user with a first and last name
-                    name = user.getUid();
-                    Map<String, Object> data = new HashMap<>();
-                    data.put("UID", name);
-                    data.put("StudentID", studentID);
+        }
+        else {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        //updateUI(user);
+
+                        // Create a new user with a first and last name
+                        name = user.getUid();
+                        Map<String, Object> data = new HashMap<>();
+                        data.put("UID", name);
+                        data.put("StudentID", studentID);
 
 
-                    db.collection("users").document(name).set(data);
+                        db.collection("users").document(name).set(data);
 
-                    Toast.makeText(SignUp.this, "Succesfully Created an Account",
-                            Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this, "Succesfully Created an Account",
+                                Toast.LENGTH_SHORT).show();
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Logout(view);
-                        }
-                    }, 3000);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Logout(view);
+                            }
+                        }, 3000);
 
 // Add a new document with a generated ID
 
 
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(SignUp.this, "Sign Up Failed",
+                                Toast.LENGTH_SHORT).show();
+                        //updateUI(null);
+                    }
 
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                    Toast.makeText(SignUp.this, "Sign Up Failed",
-                            Toast.LENGTH_SHORT).show();
-                    //updateUI(null);
+                    // ...
                 }
-
-                // ...
-            }
-        });
-
+            });
+        }
     }
 
 }

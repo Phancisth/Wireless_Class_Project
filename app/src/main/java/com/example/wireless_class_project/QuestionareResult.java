@@ -86,4 +86,10 @@ public class QuestionareResult extends AppCompatActivity {
         Intent restart = new Intent(this,Questionare.class);
         startActivity(restart);
     }
+    public void BacktoMain(View view)
+    {
+        finishAndRemoveTask();;
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="377dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
@@ -31,17 +31,18 @@
 
         <TextView
             android:id="@+id/Quesitonare_Info"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Questionaire_Label" />
+            android:text="@string/Questionaire_Label"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/Questionare_Q1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Code_Questionaire"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup1"
@@ -99,7 +100,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Math_Questionnaire"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup2"
@@ -153,11 +154,11 @@
 
         <TextView
             android:id="@+id/Questionare_Q3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Questionnaire_Memorise"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup3"
@@ -214,7 +215,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Questionnaire_Test"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup4"
@@ -271,7 +272,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Questionnaire_OpenEnd"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup5"
@@ -326,33 +327,35 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="191dp"
-        android:layout_height="70dp"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="52dp"
         android:onClick="Next"
         android:text="@string/Questionnaire_Next"
         android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
         android:id="@+id/prev"
-        android:layout_width="198dp"
-        android:layout_height="70dp"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="52dp"
         android:onClick="Prev"
         android:text="@string/Questionnaire_Previous"
         android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent" />
 
 
