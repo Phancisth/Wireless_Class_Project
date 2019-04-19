@@ -38,6 +38,7 @@
     <string name="Track4">TrackNumberFour</string>
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Software Engineer</string>
+<<<<<<< HEAD
     <string name="ITCS175">Advanced Math</string>
     <string name="ITCS200">C Programming</string>
     <string name="ITCS320">Discrete Structure</string>
@@ -60,4 +61,16 @@
     <string name="ITCS420">Computer Network</string>
     <string name="ITCS443">Parallel and Distributed System</string>
     <string name="ITCS451">Artificial Intelligence</string>
+=======
+
+    <string name="NO5">5.</string>
+    <string name="Track5">TrackNumberFive</string>
+    <string name="NO6">"6. "</string>
+    <string name="Track6">TrackNumberSix</string>
+    <string name="NO7">7.</string>
+    <string name="Track7">TrackNumberSeven</string>
+
+    <string name="BackToMain">Main Menu</string>
+
+>>>>>>> eccd9aed406d08a2fa4353bfaa1f3148b820eba3
 </resources>

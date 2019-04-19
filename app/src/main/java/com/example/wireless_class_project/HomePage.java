@@ -23,6 +23,7 @@ public class HomePage extends AppCompatActivity {
     private String TAG = "HomePage";
     private String name,id,year;
     private TextView Tname,Tid,Tyear;
+    private int GradeEdit = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +93,14 @@ public class HomePage extends AppCompatActivity {
     }
     public void GoToGrade(View view)
     {
-        Intent intent   = new Intent(this, GradeInput.class);
-        startActivity(intent);
+        if(GradeEdit == 0) {
+            Intent intent = new Intent(this, Database.class);
+            startActivity(intent);
+        }
+        else
+        {
+
+        }
     }
     public void GoToQuestionare(View view)
     {
