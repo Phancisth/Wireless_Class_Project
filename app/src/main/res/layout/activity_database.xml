@@ -6,44 +6,800 @@
     android:layout_height="match_parent"
     tools:context=".Database">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="100dp"
-            android:textAlignment="center" />
-    </RelativeLayout>
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideInset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:text="Add" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/btnAdd"
-            android:text="View Data" />
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/ITCS175"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS175" />
+
+                <EditText
+                    android:id="@+id/ITCS175_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="68dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS200" />
+
+                <EditText
+                    android:id="@+id/ITCS200_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="136dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS320"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS320" />
+
+                <EditText
+                    android:id="@+id/ITCS320_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="204dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS125"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS125" />
+
+                <EditText
+                    android:id="@+id/ITCS125_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="272dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS208"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS208" />
+
+                <EditText
+                    android:id="@+id/ITCS208_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="340dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS211"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS211" />
+
+                <EditText
+                    android:id="@+id/ITCS211_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="340dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS159"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS211" />
+
+                <EditText
+                    android:id="@+id/ITCS159_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout8"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="408dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS210"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS210" />
+
+                <EditText
+                    android:id="@+id/ITCS210_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="476dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS222" />
+
+                <EditText
+                    android:id="@+id/ITCS222_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="544dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS231"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS231" />
+
+                <EditText
+                    android:id="@+id/ITCS231_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="612dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS306"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS306" />
+
+                <EditText
+                    android:id="@+id/ITCS306_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout12"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="748dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS241"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS241" />
+
+                <EditText
+                    android:id="@+id/ITCS241_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="680dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS323"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS323" />
+
+                <EditText
+                    android:id="@+id/ITCS323_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout14"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="816dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS335"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS335" />
+
+                <EditText
+                    android:id="@+id/ITCS335_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout15"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="884dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS343"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS343" />
+
+                <EditText
+                    android:id="@+id/ITCS343_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout16"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="952dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS381"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS381" />
+
+                <EditText
+                    android:id="@+id/ITCS381_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout17"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1085dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS361"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS361" />
+
+                <EditText
+                    android:id="@+id/ITCS361_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout18"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1020dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS371"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS371" />
+
+                <EditText
+                    android:id="@+id/ITCS371_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout19"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1150dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS420"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS420" />
+
+                <EditText
+                    android:id="@+id/ITCS420_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout20"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1215dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS414"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS414" />
+
+                <EditText
+                    android:id="@+id/ITCS414_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout21"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1290dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS443"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS443" />
+
+                <EditText
+                    android:id="@+id/ITCS443_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout22"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1355dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ITCS451"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="TextView"
+                    android:textSize="18sp"
+                    tools:text="@string/ITCS451" />
+
+                <EditText
+                    android:id="@+id/ITCS451_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/AddButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="1420dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:text="Add" />
+
+                <Button
+                    android:id="@+id/btnView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="93dp"
+                    android:layout_toRightOf="@+id/btnAdd"
+                    android:text="View Data" />
+
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </android.support.constraint.ConstraintLayout>
