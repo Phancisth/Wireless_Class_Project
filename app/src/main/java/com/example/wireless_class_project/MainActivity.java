@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private String Password;
     private FirebaseAuth mAuth;
     private String TAG = "LoginPage";
+    private int Bypassincrement = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseApp.initializeApp(this);
@@ -130,6 +131,38 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(MainActivity.this,Preference.class);
         startActivity(intent);
+    }
+    public void Bypassing(View view)
+    {
+    Bypassincrement--;
+        Toast.makeText(MainActivity.this, "Bypassing "+Bypassincrement,
+                Toast.LENGTH_SHORT).show();
+    if(Bypassincrement == 0) {
+        mAuth.signInWithEmailAndPassword("wirelessproject@wireless.com", "wirelessproject")
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            finishAndRemoveTask();
+                            Intent intent = new Intent(MainActivity.this, HomePage.class);
+                            startActivity(intent);
+
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Login Failed",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
     }
 
 }
