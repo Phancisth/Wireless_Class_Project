@@ -36,7 +36,7 @@ public class Competency extends AppCompatActivity {
 
         StudentID = getIntent().getStringExtra("StudentID");
 
-        chart.setBackgroundColor(Color.rgb(50,75,50));
+        chart.setBackgroundColor(Color.rgb(245,245,245));
         chart.getDescription().setEnabled(false);
         chart.setWebLineWidth(1f);
 
@@ -57,7 +57,7 @@ public class Competency extends AppCompatActivity {
             }
         });
 
-        xAxis.setTextColor(Color.WHITE);
+        xAxis.setTextColor(Color.rgb(130,145,155));
 
         YAxis yAxis = chart.getYAxis();
         yAxis.setTextSize(10f);
@@ -74,7 +74,7 @@ public class Competency extends AppCompatActivity {
         l.setDrawInside(false);
         l.setXEntrySpace(7f);
         l.setYEntrySpace(5f);
-        l.setTextColor(Color.WHITE);
+        l.setTextColor(Color.rgb(130,145,155));
 
 
     }
@@ -89,8 +89,8 @@ public class Competency extends AppCompatActivity {
         }
 
         RadarDataSet set = new RadarDataSet(user,"ID: "+StudentID);
-        set.setColor(Color.RED);
-        set.setFillColor(Color.RED);
+        set.setColor(Color.rgb(45,186,225));
+        set.setFillColor(Color.rgb(45,186,225));
         set.setDrawFilled(true);
         set.setFillAlpha(180);
         set.setLineWidth(2f);
@@ -102,7 +102,7 @@ public class Competency extends AppCompatActivity {
         RadarData data = new RadarData(sets);
         data.setValueTextSize(8f);
         data.setDrawValues(false);
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(Color.rgb(130,145,155));
 
         chart.setData(data);
 
