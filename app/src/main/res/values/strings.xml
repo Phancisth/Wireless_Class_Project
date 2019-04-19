@@ -38,10 +38,14 @@
     <string name="Track4">TrackNumberFour</string>
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Software Engineer</string>
+<<<<<<< HEAD
     <string name="NO5">5.</string>
     <string name="Track5">TrackNumberFive</string>
     <string name="NO6">"6. "</string>
     <string name="Track6">TrackNumberSix</string>
     <string name="NO7">7.</string>
     <string name="Track7">TrackNumberSeven</string>
+=======
+    <string name="BackToMain">Main Menu</string>
+>>>>>>> origin/master
 </resources>
