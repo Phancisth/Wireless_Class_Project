@@ -46,8 +46,8 @@ public class Database extends AppCompatActivity {
         btnViewData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(Database.this, ListDataActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(Database.this, ListDataActivity.class);
+                startActivity(intent);
             }
         });
 
