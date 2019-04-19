@@ -49,7 +49,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL22 = "ITCS420";      //Computer Network
     private static final String COL23 = "ITCS443";      //Parallel and Distributed Sys.
     private static final String COL24 = "ITCS451";      //AI
-    private static final String grade1 = "MM";
 
     private String UserID;
 
@@ -100,11 +99,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item) {
+    public boolean addData(String[] item) {
         //ADD USER ID AND STUFF HERE
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, item);
+
+        contentValues.put(COL3, item[0]); contentValues.put(COL4, item[1]); contentValues.put(COL5, item[2]);
+        contentValues.put(COL6, item[3]); contentValues.put(COL7, item[4]); contentValues.put(COL8, item[5]);
+        contentValues.put(COL9, item[6]); contentValues.put(COL10, item[7]); contentValues.put(COL11, item[8]);
+        contentValues.put(COL12, item[9]); contentValues.put(COL13, item[10]); contentValues.put(COL14, item[11]);
+        contentValues.put(COL15, item[12]); contentValues.put(COL16, item[13]); contentValues.put(COL17, item[14]);
+        contentValues.put(COL18, item[15]); contentValues.put(COL19, item[16]); contentValues.put(COL20, item[17]);
+        contentValues.put(COL21, item[18]); contentValues.put(COL22, item[19]); contentValues.put(COL23, item[20]);
+        contentValues.put(COL24, item[21]);
+
 
         Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
 
