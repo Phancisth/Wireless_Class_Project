@@ -38,4 +38,26 @@
     <string name="Track4">TrackNumberFour</string>
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Software Engineer</string>
+    <string name="ITCS175">Advanced Math</string>
+    <string name="ITCS200">C Programming</string>
+    <string name="ITCS320">Discrete Structure</string>
+    <string name="ITCS125">Applied Statistics</string>
+    <string name="ITCS208">JAVA Programming</string>
+    <string name="ITCS211">Introduction to Digital System</string>
+    <string name="ITCS159">Software Lab</string>
+    <string name="ITCS210">Web Programming</string>
+    <string name="ITCS222">Computer Organization and Architecture</string>
+    <string name="ITCS231">Data Structure and Algorithm Analysis</string>
+    <string name="ITCS306">Numerical Method</string>
+    <string name="ITCS241">Database Management System</string>
+    <string name="ITCS323">Computer Data Communication</string>
+    <string name="ITCS335">Introduction to E-Business System</string>
+    <string name="ITCS343">Principle to Operating System</string>
+    <string name="ITCS381">Introduction to Multimedia</string>
+    <string name="ITCS361">Management Information System</string>
+    <string name="ITCS371">Introduction to Software Engineering</string>
+    <string name="ITCS414">Information Storage and Retrieval</string>
+    <string name="ITCS420">Computer Network</string>
+    <string name="ITCS443">Parallel and Distributed System</string>
+    <string name="ITCS451">Artificial Intelligence</string>
 </resources>
