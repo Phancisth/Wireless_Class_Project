@@ -25,7 +25,8 @@
     <string name="Questionnaire_OpenEnd">คำถามปลายเปิด</string>
     <string name="Questionnaire_Next">ถัดไป</string>
     <string name="Questionnaire_Previous">ย้อนกลับ</string>
-    <string name="Preference">Preference</string>
+    <string name="Preference">ตั้งค่า</string>
     <string name="Language">ไทย</string>
     <string name="ChangeLan">เปลี่ยนภาษา</string>
+    <string name="BackToMain">หน้าหลัก</string>
 </resources>

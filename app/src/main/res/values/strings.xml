@@ -38,4 +38,5 @@
     <string name="Track4">TrackNumberFour</string>
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Software Engineer</string>
+    <string name="BackToMain">Main Menu</string>
 </resources>
