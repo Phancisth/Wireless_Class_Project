@@ -3,16 +3,22 @@ package com.example.wireless_class_project;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -25,6 +31,8 @@ public class QuestionareResult extends AppCompatActivity {
     private String name;
     private FirebaseAuth mAuth;
     private ImageView ResultImage;
+    private DocumentReference docRef;
+    private String TAG = "QPage";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,12 +92,35 @@ public class QuestionareResult extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         name = user.getUid();
-        Map<String, Object> data = new HashMap<>();
-        data.put("Recom_Track", ShowTrack.getText().toString());
+        docRef = db.collection("users").document(mAuth.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        name = user.getUid();
+                        Map<String, Object> data = new HashMap<>();
+                        data.put("UID", name);
+                        data.put("StudentID", document.get("StudentID").toString());
+                        data.put("Recom_Track", ShowTrack.getText().toString());
+                        data.put("GradeEdit", "1");
+                        db.collection("users").document(name).set(data);
+
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+
+            }
+        });
 
 
-
-        db.collection("users").document(name).set(data);
 
     }
 

@@ -41,9 +41,6 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        FirebaseApp.initializeApp(this);
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
 
 
     }
@@ -82,6 +79,8 @@ public class SignUp extends AppCompatActivity {
                         Map<String, Object> data = new HashMap<>();
                         data.put("UID", name);
                         data.put("StudentID", studentID);
+                        data.put("Recom_Track", "NONE");
+                        data.put("GradeEdit", "0");
 
 
                         db.collection("users").document(name).set(data);
