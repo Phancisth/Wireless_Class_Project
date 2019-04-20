@@ -79,7 +79,7 @@ public class Database extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean scoreCheck = true;
-                boolean onetofour = false;
+                boolean onetofour = true;
 
                 score[0] = ITCS175.getText().toString();
                 score[1] = ITCS200.getText().toString();
@@ -104,8 +104,14 @@ public class Database extends AppCompatActivity {
                 score[20] = ITCS443.getText().toString();
                 score[21] = ITCS451.getText().toString();
                 for(int i = 0; i < 22; i++) {
-                    if(score[i].isEmpty()) scoreCheck = false;
-                    if(score[i] == "1" || score[i] == "1.5" ||score[i] == "2"||score[i] == "2.5" ||score[i] == "3" || score[i] == "3.5" ||score[i] == "4" ) onetofour = true;
+                    if (score[i].isEmpty()) {
+                        scoreCheck = false;}
+                        if(!score[i].isEmpty()) {
+                            if (Double.parseDouble(score[i]) > 4 || Double.parseDouble(score[i]) < 1) {
+                                onetofour = false;
+                            }
+                        }
+
                 }
 
                 if (scoreCheck) {
@@ -113,36 +119,38 @@ public class Database extends AppCompatActivity {
                     {
                         toastMessage("Enter only 1 2 3 4 with or witout a .5");
                     }
-                    docRef = db.collection("users").document(mAuth.getUid());
-                    docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document.exists()) {
-                                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                    else {
+                        docRef = db.collection("users").document(mAuth.getUid());
+                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
 
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    name = user.getUid();
-                                    Map<String, Object> data = new HashMap<>();
-                                    data.put("UID", name);
-                                    data.put("StudentID", document.get("StudentID").toString());
-                                    data.put("Recom_Track", document.get("Recom_Track").toString());
-                                    data.put("GradeEdit", "1");
-                                    db.collection("users").document(name).set(data);
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        name = user.getUid();
+                                        Map<String, Object> data = new HashMap<>();
+                                        data.put("UID", name);
+                                        data.put("StudentID", document.get("StudentID").toString());
+                                        data.put("Recom_Track", document.get("Recom_Track").toString());
+                                        data.put("GradeEdit", "1");
+                                        db.collection("users").document(name).set(data);
 
+                                    } else {
+                                        Log.d(TAG, "No such document");
+                                    }
                                 } else {
-                                    Log.d(TAG, "No such document");
+                                    Log.d(TAG, "get failed with ", task.getException());
                                 }
-                            } else {
-                                Log.d(TAG, "get failed with ", task.getException());
-                            }
 
-                        }
-                    });
-                    AddData(score);
-                    finishAndRemoveTask();
-                    //editText.setText("");
+                            }
+                        });
+                        AddData(score);
+                        finishAndRemoveTask();
+                        //editText.setText("");
+                    }
                 } else {
                     toastMessage("You must put something in the text field!");
                 }

@@ -773,7 +773,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="93dp"
                     android:layout_toRightOf="@+id/btnAdd"
-                    android:text="View Data" />
+                    android:text="View Data"
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
