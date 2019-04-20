@@ -88,9 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         db.execSQL(createTable);
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        UserID = user.getUid();
+
     }
 
     @Override
@@ -103,7 +101,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //ADD USER ID AND STUFF HERE
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        UserID = user.getUid();
 
+        contentValues.put(COL2, UserID);
         contentValues.put(COL3, item[0]); contentValues.put(COL4, item[1]); contentValues.put(COL5, item[2]);
         contentValues.put(COL6, item[3]); contentValues.put(COL7, item[4]); contentValues.put(COL8, item[5]);
         contentValues.put(COL9, item[6]); contentValues.put(COL10, item[7]); contentValues.put(COL11, item[8]);

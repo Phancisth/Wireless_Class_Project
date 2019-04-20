@@ -47,28 +47,28 @@ public class Database extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        ITCS175 = (EditText) findViewById(R.id.ITCS175_edit);
-        ITCS200 = (EditText) findViewById(R.id.ITCS200_edit);
-        ITCS320 = (EditText) findViewById(R.id.ITCS320_edit);
-        ITCS125 = (EditText) findViewById(R.id.ITCS125_edit);
-        ITCS208 = (EditText) findViewById(R.id.ITCS208_edit);
-        ITCS211 = (EditText) findViewById(R.id.ITCS211_edit);
-        ITCS159 = (EditText) findViewById(R.id.ITCS159_edit);
-        ITCS210 = (EditText) findViewById(R.id.ITCS210_edit);
-        ITCS222 = (EditText) findViewById(R.id.ITCS222_edit);
-        ITCS231 = (EditText) findViewById(R.id.ITCS231_edit);
-        ITCS306 = (EditText) findViewById(R.id.ITCS306_edit);
-        ITCS241 = (EditText) findViewById(R.id.ITCS241_edit);
-        ITCS323 = (EditText) findViewById(R.id.ITCS323_edit);
-        ITCS335 = (EditText) findViewById(R.id.ITCS335_edit);
-        ITCS343 = (EditText) findViewById(R.id.ITCS343_edit);
-        ITCS381 = (EditText) findViewById(R.id.ITCS381_edit);
-        ITCS361 = (EditText) findViewById(R.id.ITCS361_edit);
-        ITCS371 = (EditText) findViewById(R.id.ITCS371_edit);
-        ITCS414 = (EditText) findViewById(R.id.ITCS414_edit);
-        ITCS420 = (EditText) findViewById(R.id.ITCS420_edit);
-        ITCS443 = (EditText) findViewById(R.id.ITCS443_edit);
-        ITCS451 = (EditText) findViewById(R.id.ITCS451_edit);
+        ITCS175 = findViewById(R.id.ITCS175_edit);
+        ITCS200 = findViewById(R.id.ITCS200_edit);
+        ITCS320 = findViewById(R.id.ITCS320_edit);
+        ITCS125 = findViewById(R.id.ITCS125_edit);
+        ITCS208 = findViewById(R.id.ITCS208_edit);
+        ITCS211 = findViewById(R.id.ITCS211_edit);
+        ITCS159 = findViewById(R.id.ITCS159_edit);
+        ITCS210 = findViewById(R.id.ITCS210_edit);
+        ITCS222 = findViewById(R.id.ITCS222_edit);
+        ITCS231 = findViewById(R.id.ITCS231_edit);
+        ITCS306 = findViewById(R.id.ITCS306_edit);
+        ITCS241 = findViewById(R.id.ITCS241_edit);
+        ITCS323 = findViewById(R.id.ITCS323_edit);
+        ITCS335 = findViewById(R.id.ITCS335_edit);
+        ITCS343 = findViewById(R.id.ITCS343_edit);
+        ITCS381 = findViewById(R.id.ITCS381_edit);
+        ITCS361 = findViewById(R.id.ITCS361_edit);
+        ITCS371 = findViewById(R.id.ITCS371_edit);
+        ITCS414 = findViewById(R.id.ITCS414_edit);
+        ITCS420 = findViewById(R.id.ITCS420_edit);
+        ITCS443 = findViewById(R.id.ITCS443_edit);
+        ITCS451 = findViewById(R.id.ITCS451_edit);
 
 
         btnAdd = (Button) findViewById(R.id.btnAdd);
@@ -81,27 +81,27 @@ public class Database extends AppCompatActivity {
                 boolean scoreCheck = true;
 
                 score[0] = ITCS175.getText().toString();
-                score[1] = ITCS175.getText().toString();
-                score[2] = ITCS175.getText().toString();
-                score[3] = ITCS175.getText().toString();
-                score[4] = ITCS175.getText().toString();
-                score[5] = ITCS175.getText().toString();
-                score[6] = ITCS175.getText().toString();
-                score[7] = ITCS175.getText().toString();
-                score[8] = ITCS175.getText().toString();
-                score[9] = ITCS175.getText().toString();
-                score[10] = ITCS175.getText().toString();
-                score[11] = ITCS175.getText().toString();
-                score[12] = ITCS175.getText().toString();
-                score[13] = ITCS175.getText().toString();
-                score[14] = ITCS175.getText().toString();
-                score[15] = ITCS175.getText().toString();
-                score[16] = ITCS175.getText().toString();
-                score[17] = ITCS175.getText().toString();
-                score[18] = ITCS175.getText().toString();
-                score[19] = ITCS175.getText().toString();
-                score[20] = ITCS175.getText().toString();
-                score[21] = ITCS175.getText().toString();
+                score[1] = ITCS200.getText().toString();
+                score[2] = ITCS320.getText().toString();
+                score[3] = ITCS125.getText().toString();
+                score[4] = ITCS208.getText().toString();
+                score[5] = ITCS211.getText().toString();
+                score[6] = ITCS159.getText().toString();
+                score[7] = ITCS210.getText().toString();
+                score[8] = ITCS222.getText().toString();
+                score[9] = ITCS231.getText().toString();
+                score[10] = ITCS306.getText().toString();
+                score[11] = ITCS241.getText().toString();
+                score[12] = ITCS323.getText().toString();
+                score[13] = ITCS335.getText().toString();
+                score[14] = ITCS343.getText().toString();
+                score[15] = ITCS381.getText().toString();
+                score[16] = ITCS361.getText().toString();
+                score[17] = ITCS371.getText().toString();
+                score[18] = ITCS414.getText().toString();
+                score[19] = ITCS420.getText().toString();
+                score[20] = ITCS443.getText().toString();
+                score[21] = ITCS451.getText().toString();
                 for(int i = 0; i < 22; i++) {
                     if(score[i] == null) scoreCheck = false;
                 }
@@ -135,6 +135,7 @@ public class Database extends AppCompatActivity {
                         }
                     });
                     AddData(score);
+                    finishAndRemoveTask();
                     //editText.setText("");
                 } else {
                     toastMessage("You must put something in the text field!");
