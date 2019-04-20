@@ -58,4 +58,7 @@
     <string name="ITCS420">เครือข่ายคอมพิวเตอร์</string>
     <string name="ITCS443">ระบบแบบคู่ขนานและแบบกระจาย</string>
     <string name="ITCS451">ปัญญาประดิษฐ์</string>
+
+    <string name="Quiz_Result_Header">ผลแบบสอบถามล่าสุด</string>
+
 </resources>
