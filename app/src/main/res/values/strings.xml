@@ -85,5 +85,6 @@
 
 =======
     <string name="BackToMain">Main Menu</string>
->>>>>>> origin/master
+    <string name="Result_Dialogue">Your result is:</string>
+    >>>>>>> origin/master
 </resources>
