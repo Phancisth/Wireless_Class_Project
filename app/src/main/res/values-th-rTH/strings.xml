@@ -29,4 +29,36 @@
     <string name="Language">ไทย</string>
     <string name="ChangeLan">เปลี่ยนภาษา</string>
     <string name="BackToMain">หน้าหลัก</string>
+    <string name="StudentID">รหัสนักศึกษา</string>
+    <string name="CompetencyHead">รายงาน Competency</string>
+    <string name="BarchartDesc">กราฟ Competency</string>
+    <string name="TrackRank">ลำดับคะแนนแต่ละสาขา</string>
+
+    <string name="QuestionnaireResult">ผลแบบสอบถามล่าสุด</string>
+    <string name="TrackName">ชื่อสาขา</string>
+    <string name="ITCS175">คณิตศาสตร์ขั้นสูง</string>
+    <string name="ITCS200">โปรแกรมมิ่งภาษา C</string>
+    <string name="ITCS320">โครงสร้างไมต่อเนื่อง</string>
+    <string name="ITCS125">สถิติเชิงประยุกต์</string>
+    <string name="ITCS208">โปรแกรมมิ่งภาษา Java</string>
+    <string name="ITCS211">ระบบดิจิตัลขั้นต้น</string>
+    <string name="ITCS159">ปฏิบัติการซอฟแวร์</string>
+    <string name="ITCS210">โปรแกรมวิ่งเว็บไซต์</string>
+    <string name="ITCS222">การจัดระเบียบและสถาปัตยกรรมคอมพิวเตอร์</string>
+    <string name="ITCS231">การวิเคราะห์โครงสร้างข้อมูลและขั้นตอนวิธี</string>
+    <string name="ITCS306">วิธีเชิงตัวเลข</string>
+    <string name="ITCS241">ระบบจัดการฐานข้อมูล</string>
+    <string name="ITCS323">การสื่อสารข้อมูลคอมพิวเตอร์</string>
+    <string name="ITCS335">ระบบธุรกิจอิเล็กทรอนิกส์ขั้นต้น</string>
+    <string name="ITCS343">หลักการระบบปฏิบัติการ</string>
+    <string name="ITCS381">ระบบมัลติมีเดียขั้นต้น</string>
+    <string name="ITCS361">ระบบการจัดการสารสนเทศ</string>
+    <string name="ITCS371">วิศวกรรมซอฟแวร์ขั้นตอน</string>
+    <string name="ITCS414">การจัดเก็บและสืบค้นสารสนเทศ</string>
+    <string name="ITCS420">เครือข่ายคอมพิวเตอร์</string>
+    <string name="ITCS443">ระบบแบบคู่ขนานและแบบกระจาย</string>
+    <string name="ITCS451">ปัญญาประดิษฐ์</string>
+
+    <string name="Quiz_Result_Header">ผลแบบสอบถามล่าสุด</string>
+
 </resources>
