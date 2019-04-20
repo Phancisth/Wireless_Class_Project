@@ -18,7 +18,6 @@
         <activity android:name=".Preference" />
         <activity android:name=".SignUp" />
         <activity android:name=".Questionare" />
-        <activity android:name=".GradeInput" />
         <activity android:name=".Competency" />
         <activity android:name=".HomePage" />
         <activity android:name=".MainActivity">

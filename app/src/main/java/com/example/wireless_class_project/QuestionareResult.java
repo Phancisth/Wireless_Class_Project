@@ -1,9 +1,13 @@
 package com.example.wireless_class_project;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -20,6 +24,7 @@ public class QuestionareResult extends AppCompatActivity {
     private FirebaseFirestore db;
     private String name;
     private FirebaseAuth mAuth;
+    private ImageView ResultImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,7 @@ public class QuestionareResult extends AppCompatActivity {
         int max = 0;
         int trackchosen = 0;
         ShowTrack = findViewById(R.id.TrackResult);
+        ResultImage = findViewById(R.id.ResultIMG);
         for(int i=0;i<Score.length;i++)
         {
             if(Score[i] > max)
@@ -41,27 +47,35 @@ public class QuestionareResult extends AppCompatActivity {
         {//0=CN,1=CS,2=DB,3=EB,4=HT,5=MM,6=MS,7=SE
             case 0:
                 ShowTrack.setText("CN");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.cn, null));
                 break;
             case 1:
                 ShowTrack.setText("CS");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.cs, null));
                 break;
             case 2:
                 ShowTrack.setText("DB");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.db, null));
                 break;
             case 3:
                 ShowTrack.setText("EB");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.eb, null));
                 break;
             case 4:
                 ShowTrack.setText("HT");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.ht, null));
                 break;
             case 5:
                 ShowTrack.setText("MM");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.mm, null));
                 break;
             case 6:
                 ShowTrack.setText("MS");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.ms, null));
                 break;
             case 7:
                 ShowTrack.setText("SE");
+                ResultImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.se, null));
                 break;
 
         }
