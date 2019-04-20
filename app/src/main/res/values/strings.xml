@@ -37,7 +37,7 @@
     <string name="Track4">TrackNumberFour</string>
 
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
-    <string name="TrackName">Software Engineer</string>
+    <string name="TrackName">Track Name</string>
     <string name="ITCS175">Advanced Math</string>
     <string name="ITCS200">C Programming</string>
     <string name="ITCS320">Discrete Structure</string>
@@ -52,7 +52,7 @@
     <string name="ITCS241">Database Management System</string>
     <string name="ITCS323">Computer Data Communication</string>
     <string name="ITCS335">Introduction to E-Business System</string>
-    <string name="ITCS343">Principle to Operating System</string>
+    <string name="ITCS343">Principle of Operating System</string>
     <string name="ITCS381">Introduction to Multimedia</string>
     <string name="ITCS361">Management Information System</string>
     <string name="ITCS371">Introduction to Software Engineering</string>
