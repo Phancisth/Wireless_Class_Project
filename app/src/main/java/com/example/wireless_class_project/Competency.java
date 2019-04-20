@@ -1,10 +1,12 @@
 package com.example.wireless_class_project;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.RadarChart;
@@ -19,22 +21,34 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Competency extends AppCompatActivity {
     private static final float MAX =16, MIN =1f;
     private static final int TRACKS = 8;
     private RadarChart chart;
+    private FirebaseAuth mAuth;
+    DatabaseHelper mDatabaseHelper;
+    private String[] Subjects = {"ITCS175","ITCS200","ITCS320","ITCS125","ITCS208","ITCS211","ITCS159","ITCS210","ITCS222","ITCS231","ITCS306","ITCS241","ITCS323","ITCS335","ITCS343","ITCS381","ITCS361","ITCS371","ITCS414","ITCS420","ITCS443","ITCS451"};
+    private final String[] tracks = new String[]{"CN","CS","DB","EB","HT","MM","MS","SE"};
+    private int TrackScore[] = new int[8];
     private String StudentID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competency);
         chart = findViewById(R.id.RadarChart);
-
+        mDatabaseHelper = new DatabaseHelper(this);
         StudentID = getIntent().getStringExtra("StudentID");
+
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+
 
         chart.setBackgroundColor(Color.rgb(245,245,245));
         chart.getDescription().setEnabled(false);
@@ -49,7 +63,7 @@ public class Competency extends AppCompatActivity {
         xAxis.setYOffset(0f);
         xAxis.setXOffset(0f);
         xAxis.setValueFormatter(new ValueFormatter(){
-            private final String[] tracks = new String[]{"CN","CS","DB","EB","HT","MM","MS","SE"};
+
             @Override
             public String getFormattedValue(float value)
             {
@@ -80,9 +94,27 @@ public class Competency extends AppCompatActivity {
     }
     public void setData()
     {
+        Cursor datas = mDatabaseHelper.getScoreID(mAuth.getUid());
         ArrayList<RadarEntry> user = new ArrayList<>();
+        HashMap<String,Double> result = new HashMap<>();
+        Double[] temporary = new Double[24];
+        int g = 0;
 
-        for(int i=0;i<TRACKS;i++)
+        while(datas.moveToNext()){
+            //get the value from the database in column 1
+            //then add it to the ArrayList
+            for(int i=0;i<22;i++) {
+                result.put(Subjects[i],Double.parseDouble(datas.getString(i)));
+            }
+
+        }
+        for(String temp:Subjects)
+        {
+            temporary[g] = result.get(temp);
+            System.out.println(result.get(temp));
+            g++;
+        }
+        for(int i=0;i<TRACKS;i++)//{"CN","CS","DB","EB","HT","MM","MS","SE"}
         {
             float val = (int)(Math.random()*MAX)+MIN;
             user.add(new RadarEntry((val)));

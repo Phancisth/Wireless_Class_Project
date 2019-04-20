@@ -79,6 +79,7 @@ public class Database extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean scoreCheck = true;
+                boolean onetofour = false;
 
                 score[0] = ITCS175.getText().toString();
                 score[1] = ITCS200.getText().toString();
@@ -103,10 +104,15 @@ public class Database extends AppCompatActivity {
                 score[20] = ITCS443.getText().toString();
                 score[21] = ITCS451.getText().toString();
                 for(int i = 0; i < 22; i++) {
-                    if(score[i] == null) scoreCheck = false;
+                    if(score[i].isEmpty()) scoreCheck = false;
+                    if(score[i] == "1" || score[i] == "1.5" ||score[i] == "2"||score[i] == "2.5" ||score[i] == "3" || score[i] == "3.5" ||score[i] == "4" ) onetofour = true;
                 }
 
                 if (scoreCheck) {
+                    if(!onetofour)
+                    {
+                        toastMessage("Enter only 1 2 3 4 with or witout a .5");
+                    }
                     docRef = db.collection("users").document(mAuth.getUid());
                     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
