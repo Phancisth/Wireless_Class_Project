@@ -145,10 +145,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @return
      */
     public Cursor getItemID(String name){
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        UserID = user.getUid();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + COL1 + " FROM " + TABLE_NAME + " WHERE " + COL2 + " = '" + name + "'";
+        String query = "SELECT '"+name+"' FROM " + TABLE_NAME + " WHERE "
+               +COL2+" = '"+UserID+"'";
         Cursor data = db.rawQuery(query, null);
-        return data;
+
+            return data;
     }
 
     /**
@@ -157,7 +162,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * **/
     public Cursor getScoreID(String name){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL2 + " = '" + name + "'";
+        String query = "SELECT "
+                + COL3 + ", "+ COL4 + ", "+ COL5 + ", "
+                + COL6 + ", "+ COL7 + ", "+ COL8 + ", "
+                + COL9 + ", "+ COL10 + ", "+ COL11 + ", "
+                + COL12 + ", "+ COL13 + ", "+ COL14 + ", "
+                + COL15 + ", "+ COL16 + ", "+ COL17 + ", "
+                + COL18 + ", "+ COL19 + ", "+ COL20 + ", "
+                + COL21 + ", "+ COL22 + ", "+ COL23 + ", "
+                + COL24
+                +" FROM " + TABLE_NAME + " WHERE " + COL2 + " = '" + name + "'";
 
         Cursor data = db.rawQuery(query, null);
         return data;
@@ -196,14 +210,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Delete from database
-     * @param id
+     * @param
      * @param name
      */
-    public void deleteName(int id, String name){
+    public void deleteName(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + name + "'";
+                + COL2 + " = '" + name + "'";
         Log.d(TAG, "deleteName: query: " + query);
         Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);

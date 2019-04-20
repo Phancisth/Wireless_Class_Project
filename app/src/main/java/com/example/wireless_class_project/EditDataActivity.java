@@ -9,9 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by User on 2/28/2017.
- */
+
 
 public class EditDataActivity extends AppCompatActivity {
 
@@ -64,7 +62,7 @@ public class EditDataActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDatabaseHelper.deleteName(selectedID,selectedName);
+                mDatabaseHelper.deleteName(selectedName);
                 editable_item.setText("");
                 toastMessage("removed from database");
                 finishAndRemoveTask();

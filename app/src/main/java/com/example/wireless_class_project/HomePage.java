@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +24,7 @@ public class HomePage extends AppCompatActivity {
     private String TAG = "HomePage";
     private String name,id,year;
     private TextView Tname,Tid,Tyear;
-    private int GradeEdit = 0;
+    private int GradeEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,14 +94,46 @@ public class HomePage extends AppCompatActivity {
     }
     public void GoToGrade(View view)
     {
-        if(GradeEdit == 0) {
-            Intent intent = new Intent(this, Database.class);
-            startActivity(intent);
-        }
-        else
-        {
 
-        }
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        //System.out.println(document.get("StudentID"));
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        if(document.get("GradeEdit").toString().compareTo("1") == 0)
+                        {
+
+                            GradeEdit = 1;
+                        }
+                        else
+                        {
+                            System.out.println("WHAT");
+                            GradeEdit = 0;
+                        }
+                        if(GradeEdit == 0) {
+                            Intent intent = new Intent(HomePage.this, Database.class);
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(HomePage.this, ListDataActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(HomePage.this,"You Have Already Input Grade Once", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        System.out.println("THIS SHIT"+GradeEdit);
+
     }
     public void GoToQuestionare(View view)
     {
