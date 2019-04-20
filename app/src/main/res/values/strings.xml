@@ -35,8 +35,7 @@
     <string name="Track2">TrackNumberTwo</string>
     <string name="Track3">TrackNumberThree</string>
     <string name="Track4">TrackNumberFour</string>
-<<<<<<< HEAD
-=======
+
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Software Engineer</string>
     <string name="ITCS175">Advanced Math</string>
@@ -62,11 +61,9 @@
     <string name="ITCS443">Parallel and Distributed System</string>
     <string name="ITCS451">Artificial Intelligence</string>
     <string name="NO5">5.</string>
->>>>>>> origin/master
     <string name="Track5">TrackNumberFive</string>
     <string name="Track6">TrackNumberSix</string>
     <string name="Track7">TrackNumberSeven</string>
-<<<<<<< HEAD
     <string name="Track8">TrackNumberEight</string>
 
     <string name="BackToMain">Main Menu</string>
@@ -83,7 +80,7 @@
     <string name="Quiz_Result_Header">Latest Questionnaire Result</string>
     <string name="Track_Name">Track Name</string>
 
-=======
+
     <string name="BackToMain">Main Menu</string>
->>>>>>> origin/master
+
 </resources>
