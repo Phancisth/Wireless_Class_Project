@@ -80,14 +80,7 @@
     <string name="Quiz_Result_Header">Latest Questionnaire Result</string>
     <string name="Track_Name">Track Name</string>
 
-<<<<<<< HEAD
-=======
     <string name="BackToMain">Main Menu</string>
     <string name="Result_Dialogue">Your result is:</string>
-    >>>>>>> origin/master
-=======
-
-
-
->>>>>>> origin/master
+    
 </resources>
