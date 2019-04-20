@@ -95,7 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP IF TABLE EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
@@ -132,7 +132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT * FROM " + TABLE_NAME ;
         Cursor data = db.rawQuery(query, null);
         return data;
     }
@@ -144,11 +144,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public Cursor getItemID(String name){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
-                " WHERE " + COL2 + " = '" + name + "'";
+        String query = "SELECT " + COL1 + " FROM " + TABLE_NAME + " WHERE " + COL2 + " = '" + name + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
+    /**
+     * Returns the scores of the ID that matches the name passed in
+     *
+     * **/
+    public Cursor getScoreID(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL2 + " = '" + name + "'";
+
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
 
     /**
      * Updates the name field
@@ -158,11 +170,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public void updateName(String newName, int id, String oldName){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 +
-                " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + oldName + "'";
+        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 + " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" + " AND " + COL2 + " = '" + oldName + "'";
         Log.d(TAG, "updateName: query: " + query);
         Log.d(TAG, "updateName: Setting name to " + newName);
+        db.execSQL(query);
+    }
+
+    /**
+     * Update the score value of a subject of a user
+     *
+     * @param subjectID (this is exactly the same as column name)
+     * @param newScore
+     * @param id
+     */
+    public void updateScore(String newScore, int id, String subjectID) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + TABLE_NAME + " SET " + subjectID + " = '" + newScore + "' WHERE" + COL1 + "= '" + id + "'";
+        Log.d(TAG, "updateScore: query: " + query);
+        Log.d(TAG, "updateScore: setting score to " + newScore);
         db.execSQL(query);
     }
 
