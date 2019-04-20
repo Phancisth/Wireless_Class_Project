@@ -115,11 +115,11 @@ public class Database extends AppCompatActivity {
                 }
 
                 if (scoreCheck) {
-                    if(!onetofour)
-                    {
-                        toastMessage("Enter only 1 2 3 4 with or witout a .5");
-                    }
-                    else {
+                    //if(!onetofour)
+                    //{
+                    //    toastMessage("Enter only 1 2 3 4 with or witout a .5");
+                    //}
+                   // else {
                         docRef = db.collection("users").document(mAuth.getUid());
                         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
@@ -150,7 +150,7 @@ public class Database extends AppCompatActivity {
                         AddData(score);
                         finishAndRemoveTask();
                         //editText.setText("");
-                    }
+                    //}
                 } else {
                     toastMessage("You must put something in the text field!");
                 }

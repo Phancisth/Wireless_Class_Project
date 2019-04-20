@@ -3,10 +3,13 @@ package com.example.wireless_class_project;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.RadarChart;
@@ -21,11 +24,19 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+
 
 
 public class Competency extends AppCompatActivity {
@@ -33,11 +44,16 @@ public class Competency extends AppCompatActivity {
     private static final int TRACKS = 8;
     private RadarChart chart;
     private FirebaseAuth mAuth;
+    private DocumentReference docRef;
+    private String TAG = "Competency";
     DatabaseHelper mDatabaseHelper;
     private String[] Subjects = {"ITCS175","ITCS200","ITCS320","ITCS125","ITCS208","ITCS211","ITCS159","ITCS210","ITCS222","ITCS231","ITCS306","ITCS241","ITCS323","ITCS335","ITCS343","ITCS381","ITCS361","ITCS371","ITCS414","ITCS420","ITCS443","ITCS451"};
     private final String[] tracks = new String[]{"CN","CS","DB","EB","HT","MM","MS","SE"};
-    private int TrackScore[] = new int[8];
+    private float TrackScore[] = new float[8];
     private String StudentID;
+    private TextView[] T1 = new TextView[8];
+    private TextView T2;
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +64,37 @@ public class Competency extends AppCompatActivity {
 
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
+        T1[7] = findViewById(R.id.TrackNo1);
+        T1[6] = findViewById(R.id.TrackNo2);
+        T1[5] = findViewById(R.id.TrackNo3);
+        T1[4] = findViewById(R.id.TrackNo4);
+        T1[3] = findViewById(R.id.TrackNo5);
+        T1[2] = findViewById(R.id.TrackNo6);
+        T1[1] = findViewById(R.id.TrackNo7);
+        T1[0] = findViewById(R.id.TrackNo8);
+        T2 = findViewById(R.id.trackname);
 
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        docRef = db.collection("users").document(mAuth.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        //System.out.println(document.get("StudentID"));
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        T2.setText(document.get("Recom_Track").toString());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
 
         chart.setBackgroundColor(Color.rgb(245,245,245));
         chart.getDescription().setEnabled(false);
@@ -96,28 +142,61 @@ public class Competency extends AppCompatActivity {
     {
         Cursor datas = mDatabaseHelper.getScoreID(mAuth.getUid());
         ArrayList<RadarEntry> user = new ArrayList<>();
-        HashMap<String,Double> result = new HashMap<>();
-        Double[] temporary = new Double[24];
+        HashMap<String,Float> result = new HashMap<>();
+        float[] temporary = new float[22];
         int g = 0;
 
         while(datas.moveToNext()){
             //get the value from the database in column 1
             //then add it to the ArrayList
             for(int i=0;i<22;i++) {
-                result.put(Subjects[i],Double.parseDouble(datas.getString(i)));
+                result.put(Subjects[i],Float.parseFloat(datas.getString(i)));
             }
 
         }
         for(String temp:Subjects)
         {
             temporary[g] = result.get(temp);
-            System.out.println(result.get(temp));
+            System.out.println(temporary[g]);
             g++;
         }
+        TrackScore[0] = temporary[20];
+        TrackScore[1] = temporary[19];
+        TrackScore[2] = temporary[11];
+        TrackScore[3] = temporary[13];
+        TrackScore[4] = temporary[21];
+        TrackScore[5] = temporary[16];
+        TrackScore[6] = temporary[15];
+        TrackScore[7] = temporary[17];
+
         for(int i=0;i<TRACKS;i++)//{"CN","CS","DB","EB","HT","MM","MS","SE"}
         {
-            float val = (int)(Math.random()*MAX)+MIN;
+            float val = TrackScore[i];
+            if(val > 18)
+            {
+                val = 18;
+            }
             user.add(new RadarEntry((val)));
+        }
+        String[] tempptracks = new String[8];
+        float max = 0;
+        int choose = 0;
+        int T1Num = 7;
+        for(int j=0;j<8;j++) {
+            for (int i = 0; i < 8; i++) {
+                if (TrackScore[i] > max) {
+                    max = TrackScore[i];
+                    T1[T1Num].setText(tracks[i]);
+                    choose = i;
+
+                }
+            }
+            System.out.println("ITEMS : ");
+            System.out.println(TrackScore[5]);
+
+            T1Num--;
+            TrackScore[choose] = -1;
+            max = 0;
         }
 
         RadarDataSet set = new RadarDataSet(user,"ID: "+StudentID);
