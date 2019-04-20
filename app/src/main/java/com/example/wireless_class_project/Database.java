@@ -25,28 +25,28 @@ public class Database extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
-        ITCS175 = (EditText) findViewById(R.id.ITCS175_edit); score[0] = ITCS175.getText().toString();
-        ITCS200 = (EditText) findViewById(R.id.ITCS200_edit); score[1] = ITCS175.getText().toString();
-        ITCS320 = (EditText) findViewById(R.id.ITCS320_edit); score[2] = ITCS175.getText().toString();
-        ITCS125 = (EditText) findViewById(R.id.ITCS125_edit); score[3] = ITCS175.getText().toString();
-        ITCS208 = (EditText) findViewById(R.id.ITCS208_edit); score[4] = ITCS175.getText().toString();
-        ITCS211 = (EditText) findViewById(R.id.ITCS211_edit); score[5] = ITCS175.getText().toString();
-        ITCS159 = (EditText) findViewById(R.id.ITCS159_edit); score[6] = ITCS175.getText().toString();
-        ITCS210 = (EditText) findViewById(R.id.ITCS210_edit); score[7] = ITCS175.getText().toString();
-        ITCS222 = (EditText) findViewById(R.id.ITCS222_edit); score[8] = ITCS175.getText().toString();
-        ITCS231 = (EditText) findViewById(R.id.ITCS231_edit); score[9] = ITCS175.getText().toString();
-        ITCS306 = (EditText) findViewById(R.id.ITCS306_edit); score[10] = ITCS175.getText().toString();
-        ITCS241 = (EditText) findViewById(R.id.ITCS241_edit); score[11] = ITCS175.getText().toString();
-        ITCS323 = (EditText) findViewById(R.id.ITCS323_edit); score[12] = ITCS175.getText().toString();
-        ITCS335 = (EditText) findViewById(R.id.ITCS335_edit); score[13] = ITCS175.getText().toString();
-        ITCS343 = (EditText) findViewById(R.id.ITCS343_edit); score[14] = ITCS175.getText().toString();
-        ITCS381 = (EditText) findViewById(R.id.ITCS381_edit); score[15] = ITCS175.getText().toString();
-        ITCS361 = (EditText) findViewById(R.id.ITCS361_edit); score[16] = ITCS175.getText().toString();
-        ITCS371 = (EditText) findViewById(R.id.ITCS371_edit); score[17] = ITCS175.getText().toString();
-        ITCS414 = (EditText) findViewById(R.id.ITCS414_edit); score[18] = ITCS175.getText().toString();
-        ITCS420 = (EditText) findViewById(R.id.ITCS420_edit); score[19] = ITCS175.getText().toString();
-        ITCS443 = (EditText) findViewById(R.id.ITCS443_edit); score[20] = ITCS175.getText().toString();
-        ITCS451 = (EditText) findViewById(R.id.ITCS451_edit); score[21] = ITCS175.getText().toString();
+        ITCS175 = (EditText) findViewById(R.id.ITCS175_edit);
+        ITCS200 = (EditText) findViewById(R.id.ITCS200_edit);
+        ITCS320 = (EditText) findViewById(R.id.ITCS320_edit);
+        ITCS125 = (EditText) findViewById(R.id.ITCS125_edit);
+        ITCS208 = (EditText) findViewById(R.id.ITCS208_edit);
+        ITCS211 = (EditText) findViewById(R.id.ITCS211_edit);
+        ITCS159 = (EditText) findViewById(R.id.ITCS159_edit);
+        ITCS210 = (EditText) findViewById(R.id.ITCS210_edit);
+        ITCS222 = (EditText) findViewById(R.id.ITCS222_edit);
+        ITCS231 = (EditText) findViewById(R.id.ITCS231_edit);
+        ITCS306 = (EditText) findViewById(R.id.ITCS306_edit);
+        ITCS241 = (EditText) findViewById(R.id.ITCS241_edit);
+        ITCS323 = (EditText) findViewById(R.id.ITCS323_edit);
+        ITCS335 = (EditText) findViewById(R.id.ITCS335_edit);
+        ITCS343 = (EditText) findViewById(R.id.ITCS343_edit);
+        ITCS381 = (EditText) findViewById(R.id.ITCS381_edit);
+        ITCS361 = (EditText) findViewById(R.id.ITCS361_edit);
+        ITCS371 = (EditText) findViewById(R.id.ITCS371_edit);
+        ITCS414 = (EditText) findViewById(R.id.ITCS414_edit);
+        ITCS420 = (EditText) findViewById(R.id.ITCS420_edit);
+        ITCS443 = (EditText) findViewById(R.id.ITCS443_edit);
+        ITCS451 = (EditText) findViewById(R.id.ITCS451_edit);
 
 
         btnAdd = (Button) findViewById(R.id.btnAdd);
@@ -58,6 +58,28 @@ public class Database extends AppCompatActivity {
             public void onClick(View v) {
                 boolean scoreCheck = true;
 
+                score[0] = ITCS175.getText().toString();
+                score[1] = ITCS175.getText().toString();
+                score[2] = ITCS175.getText().toString();
+                score[3] = ITCS175.getText().toString();
+                score[4] = ITCS175.getText().toString();
+                score[5] = ITCS175.getText().toString();
+                score[6] = ITCS175.getText().toString();
+                score[7] = ITCS175.getText().toString();
+                score[8] = ITCS175.getText().toString();
+                score[9] = ITCS175.getText().toString();
+                score[10] = ITCS175.getText().toString();
+                score[11] = ITCS175.getText().toString();
+                score[12] = ITCS175.getText().toString();
+                score[13] = ITCS175.getText().toString();
+                score[14] = ITCS175.getText().toString();
+                score[15] = ITCS175.getText().toString();
+                score[16] = ITCS175.getText().toString();
+                score[17] = ITCS175.getText().toString();
+                score[18] = ITCS175.getText().toString();
+                score[19] = ITCS175.getText().toString();
+                score[20] = ITCS175.getText().toString();
+                score[21] = ITCS175.getText().toString();
                 for(int i = 0; i < 22; i++) {
                     if(score[i] == null) scoreCheck = false;
                 }
