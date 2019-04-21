@@ -1,9 +1,13 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.os.ConfigurationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -18,9 +22,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Locale;
-
 public class HomePage extends AppCompatActivity {
+    //NameSpace
     private FirebaseAuth mAuth;
     private DocumentReference docRef;
     private FirebaseFirestore db;
@@ -32,10 +35,11 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //System.out.println("SOMETHINGHERE"+ ConfigurationCompat.getLocales(getResources().getConfiguration()).get(0));
+        //Initialize
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        //Connects to FireBase DB
         docRef = db.collection("users").document(mAuth.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -43,7 +47,6 @@ public class HomePage extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        //System.out.println(document.get("StudentID"));
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         name = mAuth.getCurrentUser().getEmail();
                         id = document.get("StudentID").toString();
@@ -75,14 +78,11 @@ public class HomePage extends AppCompatActivity {
                 Tname.setText("Email: "+name);
                 Tid.setText("ID: "+id);
                 Tyear.setText("Year: "+year);
-
-
             }
         });
-        //Intent intent = getIntent(); //?? Dont know why this is here
 
     }
-
+    //Logout of the App
     public void Logout(View view)
     {
         mAuth.signOut();
@@ -90,6 +90,7 @@ public class HomePage extends AppCompatActivity {
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    //Directs the user to the Competency Page
     public void GoToCompetency(View view)
     {
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -121,6 +122,7 @@ public class HomePage extends AppCompatActivity {
         });
 
     }
+    //Directs the user to the GradeEdit Page
     public void GoToGrade(View view)
     {
 
@@ -164,11 +166,13 @@ public class HomePage extends AppCompatActivity {
 
 
     }
+    //Directs the user to the Questionaire Page
     public void GoToQuestionare(View view)
     {
         Intent intent   = new Intent(this, Questionare.class);
         startActivity(intent);
     }
+    //Directs the user to the Preference Page
     public void GoToPreference(View view)
     {
         Intent intent = new Intent(this, Preference.class);

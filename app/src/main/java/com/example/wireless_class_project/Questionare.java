@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -14,7 +19,7 @@ import android.widget.Toast;
 
 public class Questionare extends AppCompatActivity {
 
-
+    //Namespace
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton checkedRadioButtonG1, checkedRadioButtonG2, checkedRadioButtonG3, checkedRadioButtonG4, checkedRadioButtonG5;
     Button nextButton;
@@ -26,6 +31,7 @@ public class Questionare extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
+        //Initialize
         Q1 = findViewById(R.id.Questionare_Q1);
         Q2 = findViewById(R.id.Questionare_Q2);
         Q3 = findViewById(R.id.Questionare_Q3);
@@ -104,13 +110,14 @@ public class Questionare extends AppCompatActivity {
         radioGroup5 = findViewById(R.id.radioGroup5);
 
     }
+    //Logout of the applicaton
     public void Logout(View view)
     {
         finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
+    //Go to the next Question Page
     public void Next(View view) {
     int passable = 1;
         //Get some score here
@@ -511,15 +518,13 @@ public class Questionare extends AppCompatActivity {
         }
 
     }
-
+    //Resets the questions page
     public void Prev(View view) {
-        //Go to the previous page in the questionnaire Nahhhh Reset this whole thing
-        //Make it a button that links to a page where the users can check the past results and other shit
         finishAndRemoveTask();
         Intent restart = new Intent(this,Questionare.class);
         startActivity(restart);
     }
-
+    //Check button pressed
     public String checkButtonG1 (View view) {
 
         int radioID = radioGroup1.getCheckedRadioButtonId();
@@ -536,6 +541,7 @@ public class Questionare extends AppCompatActivity {
         }
         return "0";
     }
+    //Check button pressed
     public String checkButtonG2 (View view) {
 
         int radioID = radioGroup2.getCheckedRadioButtonId();
@@ -553,6 +559,7 @@ public class Questionare extends AppCompatActivity {
         return "0";
 
     }
+    //Check button pressed
     public String checkButtonG3 (View view) {
 
         int radioID = radioGroup3.getCheckedRadioButtonId();
@@ -570,6 +577,7 @@ public class Questionare extends AppCompatActivity {
         return "0";
 
     }
+    //Check button pressed
     public String checkButtonG4 (View view) {
 
         int radioID = radioGroup4.getCheckedRadioButtonId();
@@ -587,6 +595,7 @@ public class Questionare extends AppCompatActivity {
         return "0";
 
     }
+    //Check button pressed
     public String checkButtonG5 (View view) {
 
         int radioID = radioGroup5.getCheckedRadioButtonId();

@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -34,6 +39,7 @@ import java.util.HashMap;
 
 
 public class Competency extends AppCompatActivity {
+    //NameSpace
     private static final float MAX =16, MIN =1f;
     private static final int TRACKS = 8;
     private RadarChart chart;
@@ -49,14 +55,15 @@ public class Competency extends AppCompatActivity {
     private TextView T2;
     private TextView[] ScoreT1 = new TextView[8];
     private FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competency);
+        //Initialize
         chart = findViewById(R.id.RadarChart);
         mDatabaseHelper = new DatabaseHelper(this);
         StudentID = getIntent().getStringExtra("StudentID");
-
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         T1[7] = findViewById(R.id.TrackNo1);
@@ -81,6 +88,8 @@ public class Competency extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         docRef = db.collection("users").document(mAuth.getUid());
+
+        //This Access the FireBase Storage
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -98,6 +107,7 @@ public class Competency extends AppCompatActivity {
             }
         });
 
+        //Chart for the Competency Report
         chart.setBackgroundColor(Color.rgb(245,245,245));
         chart.getDescription().setEnabled(false);
         chart.setWebLineWidth(1f);
@@ -140,6 +150,7 @@ public class Competency extends AppCompatActivity {
 
 
     }
+    //Sets the Data for the competency Report Chart
     public void setData()
     {
         Cursor datas = mDatabaseHelper.getScoreID(mAuth.getUid());
@@ -247,13 +258,7 @@ public class Competency extends AppCompatActivity {
 
 
     }
-    public void GodTemp(View view)
-    {
- //       chart.getXAxis().setEnabled(!chart.getXAxis().isEnabled());
-//        chart.notifyDataSetChanged();
-
- //       chart.invalidate();
-    }
+    //Logout of the App
     public void Logout(View view)
     {
         finishAndRemoveTask();

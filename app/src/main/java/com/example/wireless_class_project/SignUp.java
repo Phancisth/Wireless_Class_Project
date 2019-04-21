@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -29,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
-
+    //namespace
     private EditText namein, emailin, passwordin, studentIDin,Confirmin;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -41,11 +46,13 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        //initialize
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
     }
+    //signs user out of the system
     public void Logout(View view)
     {
         mAuth.signOut();
@@ -53,6 +60,7 @@ public class SignUp extends AppCompatActivity {
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    //Signup with Firebase Authenticator
     public void SignupButton(final View view)
     {
         emailin = findViewById(R.id.input_email);
@@ -100,7 +108,7 @@ public class SignUp extends AppCompatActivity {
                                 }
                             }, 3000);
 
-// Add a new document with a generated ID
+                        // Add a new document with a generated ID
 
 
                         } else {
@@ -111,11 +119,9 @@ public class SignUp extends AppCompatActivity {
                             //updateUI(null);
                         }
 
-                        // ...
                     }
                 });
             }
-
             else
             {
                 Toast.makeText(SignUp.this, "Password Does Not Match",

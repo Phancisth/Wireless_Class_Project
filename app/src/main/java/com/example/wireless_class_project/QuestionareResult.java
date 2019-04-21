@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -25,6 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class QuestionareResult extends AppCompatActivity {
+    //nameSpace
     private int Score[] = new int[8];
     private TextView ShowTrack;
     private FirebaseFirestore db;
@@ -37,6 +43,7 @@ public class QuestionareResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare_result);
+        //Initialize
         Score = getIntent().getIntArrayExtra("Score");
         int max = 0;
         int trackchosen = 0;
@@ -90,7 +97,7 @@ public class QuestionareResult extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-
+        //Adds the information to Firebase DB
         name = user.getUid();
         docRef = db.collection("users").document(mAuth.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -123,14 +130,13 @@ public class QuestionareResult extends AppCompatActivity {
 
 
     }
-
+    //Retake the questionaire
     public void Prev(View view) {
-        //Go to the previous page in the questionnaire Nahhhh Reset this whole thing
-        //Make it a button that links to a page where the users can check the past results and other shit
         finishAndRemoveTask();
         Intent restart = new Intent(this,Questionare.class);
         startActivity(restart);
     }
+    //Back to menu
     public void BacktoMain(View view)
     {
         finishAndRemoveTask();;

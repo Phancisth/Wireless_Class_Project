@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -25,6 +30,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class Preference extends AppCompatActivity {
+    //NameSpace
     private String currentLocal;
     DatabaseHelper mDatabaseHelper;
     private FirebaseFirestore db;
@@ -36,25 +42,17 @@ public class Preference extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
+        //Initialize
         currentLocal = ConfigurationCompat.getLocales(getResources().getConfiguration()).get(0).toString();
-        //System.out.println(currentLocal+"TAGHERE");
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         mDatabaseHelper = new DatabaseHelper(this);
     }
-
-//    public void Bypass(View view)
-//    {
-//        finishAndRemoveTask();
-//        Intent intent = new Intent(Preference.this,HomePage.class);
-//        startActivity(intent);
-//    }
-
+    //Changes the language using localization NOT ALL ITEMS CAN BE CHANGED
     public void ChangeLanguage(View view) {
         MainActivity.temp.finishAndRemoveTask();
         if (currentLocal.contains("en")) {
-            //System.out.println(currentLocal);
             Locale myLocale = new Locale("th");
             Resources res = getResources();
             DisplayMetrics dm = res.getDisplayMetrics();
@@ -69,7 +67,6 @@ public class Preference extends AppCompatActivity {
             startActivity(refresh);
 
         } else if (currentLocal.contains("th")) {
-           // System.out.println(currentLocal);
             Locale myLocale = new Locale("en");
             Resources res = getResources();
             DisplayMetrics dm = res.getDisplayMetrics();
@@ -85,6 +82,7 @@ public class Preference extends AppCompatActivity {
 
         }
     }
+    //Delete all Gradeinput data in the DB for the current user
     public void ResetDB(View view)
     {
         MainActivity.temp.finishAndRemoveTask();

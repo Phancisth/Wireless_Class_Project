@@ -1,4 +1,8 @@
-
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -27,7 +31,7 @@ import java.util.Map;
 
 
 public class Database extends AppCompatActivity {
-
+    //NameSpace
     private static final String TAG = "Database";
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
@@ -42,7 +46,7 @@ public class Database extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
-
+        //Initialize
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -120,6 +124,7 @@ public class Database extends AppCompatActivity {
                         toastMessage("Enter only 1 2 3 4 with or witout a .5");
                     }
                     else {
+                        //Connects FireBase Storage with SQLite
                         docRef = db.collection("users").document(mAuth.getUid());
                         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
@@ -167,7 +172,7 @@ public class Database extends AppCompatActivity {
         });
 
     }
-
+    //Add Data to the SQLite Storage
     public void AddData(String[] newEntry) {
         boolean insertData = mDatabaseHelper.addData(newEntry);
 
@@ -178,10 +183,7 @@ public class Database extends AppCompatActivity {
         }
     }
 
-    /**
-     * customizable toast
-     * @param message
-     */
+    //Toast Message Handler
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }

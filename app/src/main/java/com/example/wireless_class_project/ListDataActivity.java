@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,8 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
+
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -25,6 +29,7 @@ import java.util.Map;
 
 public class ListDataActivity extends AppCompatActivity {
 
+    //NameSpace
     private static final String TAG = "ListDataActivity";
     private FirebaseAuth mAuth;
 
@@ -37,6 +42,7 @@ public class ListDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
+        //Initialize
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         mListView = (ListView) findViewById(R.id.listView);
@@ -46,7 +52,7 @@ public class ListDataActivity extends AppCompatActivity {
 
         populateListView();
     }
-
+    //adds data to the list view for users to select
     private void populateListView() {
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
 
@@ -67,7 +73,6 @@ public class ListDataActivity extends AppCompatActivity {
                 new String[]{"First Line=|=", "Second Line"},
                 new int[]{R.id.text1, R.id.text2});
         //create the list adapter and set the adapter
-        //ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
         Iterator it = result.entrySet().iterator();
         while (it.hasNext())
         {
@@ -91,6 +96,7 @@ public class ListDataActivity extends AppCompatActivity {
                 name = name.replace("=","");
                 name = name.replace("|","");
                 name = name.replace("}","");
+                //Remove bad characters
                 Log.d(TAG, "onItemClick: You Clicked on " + name);
 
                 Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
@@ -113,10 +119,7 @@ public class ListDataActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * customizable toast
-     * @param message
-     */
+    //Toast Handler
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }

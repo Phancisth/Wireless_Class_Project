@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.Intent;
@@ -14,7 +19,7 @@ import android.widget.Toast;
 public class EditDataActivity extends AppCompatActivity {
 
     private static final String TAG = "EditDataActivity";
-
+    //NameSpace
     private Button btnSave,btnDelete;
     private EditText editable_item;
 
@@ -27,6 +32,7 @@ public class EditDataActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
+        //Initialize
         btnSave = (Button) findViewById(R.id.btnSave);
         btnDelete = (Button) findViewById(R.id.btnDelete);
         editable_item = (EditText) findViewById(R.id.editable_item);
@@ -43,7 +49,7 @@ public class EditDataActivity extends AppCompatActivity {
 
         //set the text to show the current selected name
         editable_item.setHint(selectedName);
-
+        //Saves the new Data to DB using Update
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +69,7 @@ public class EditDataActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Delete Data from DB using Delete
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,10 +84,7 @@ public class EditDataActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * customizable toast
-     * @param message
-     */
+    //Toast Handler
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }

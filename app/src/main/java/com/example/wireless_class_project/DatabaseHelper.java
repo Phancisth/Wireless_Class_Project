@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.content.ContentValues;
@@ -21,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-
+    //NameSpace
     private static final String TAG = "DatabaseHelper";
 
     private static final String TABLE_NAME = "user_id_grades";
@@ -60,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        //INITIALIZE TABLE
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL2 + " TEXT, " +
                 COL3 + " INTEGER, " +
@@ -92,11 +97,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
+    //Checks for old Table
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
-
+    //Insert Data to the table
     public boolean addData(String[] item) {
         //ADD USER ID AND STUFF HERE
         SQLiteDatabase db = this.getWritableDatabase();
@@ -128,10 +134,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /**
-     * Returns all the data from database
-     * @return
-     */
+    //Gets Everything from the DB
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME ;
@@ -139,11 +142,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    /**
-     * Returns only the ID that matches the name passed in
-     * @param name
-     * @return
-     */
+    //Gets Information for a certain user
     public Cursor getItemID(String name){
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -156,22 +155,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             return data;
     }
-    /*public boolean updateQuestion (int setNO, int questionFlag, Question question){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("problem", question.getQuestionName());
-        contentValues.put("answer1", question.getAnswers()[0]);
-        contentValues.put("answer2", question.getAnswers()[1]);
-        contentValues.put("answer3", question.getAnswers()[2]);
-        contentValues.put("answer4", question.getAnswers()[3]);
-        contentValues.put("correctans", question.getCorrectAnswer());
-        db.update("question", contentValues, "setNO= ? AND questionNo = ? AND questionFlag = ?", new String[]{ Integer.toString(setNO),Integer.toString(question.getQuestionNO()), Integer.toString(questionFlag)});
-        return true;
-    }*/
-    /**
-     * Returns the scores of the ID that matches the name passed in
-     *
-     * **/
+
+    //Gets the score for user
     public Cursor getScoreID(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT "
@@ -188,29 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-
-
-    /**
-     * Updates the name field
-     * @param newName
-     * @param
-     * @param
-     */
-//    public void updateName(String newName, String COLName){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        String query = "UPDATE " + TABLE_NAME + " SET " + COLName + " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" + " AND " + COL2 + " = '" + oldName + "'";
-//        Log.d(TAG, "updateName: query: " + query);
-//        Log.d(TAG, "updateName: Setting name to " + newName);
-//        db.execSQL(query);
-//    }
-
-    /**
-     * Update the score value of a subject of a user
-     *
-     * @param subjectID (this is exactly the same as column name)
-     * @param newScore
-     * @param
-     */
+    //Updates Score in the Edit Page
     public void updateScore(String newScore, String subjectID) {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -222,11 +185,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-    /**
-     * Delete from database
-     * @param
-     * @param name
-     */
+    //Reset the Database in Preference
     public void deleteName(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM " + TABLE_NAME + " WHERE "

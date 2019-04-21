@@ -1,3 +1,8 @@
+/*Project By
+5988023	Purit		Phanudom
+5988053	Naruedon	Wattanakul
+5988098	Tattiya		Sakulniwat
+ */
 package com.example.wireless_class_project;
 
 import android.app.Activity;
@@ -29,9 +34,9 @@ import java.util.Locale;
 import static android.graphics.ColorSpace.Model.XYZ;
 
 public class MainActivity extends AppCompatActivity {
+    //NameSpace
     private EditText LoginUsername;
     private EditText LoginPassword;
-    private TextView Language;
     private String  Email;
     private String Password;
     private FirebaseAuth mAuth;
@@ -42,23 +47,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
+        //Initialize
         setContentView(R.layout.activity_main);
         temp = this;
         mAuth = FirebaseAuth.getInstance();
         LoginUsername = findViewById(R.id.Login_Username);
         LoginPassword = findViewById(R.id.Login_Password);
-
-
-
-        /*if(getIntent().getStringExtra("Current_Language") == null)
-        {
-            Locale.setDefault(new Locale("en"));
-        }
-        else {
-            Locale.setDefault(new Locale(getIntent().getStringExtra("Current_Language")));
-        }*/
     }
 
+    //Login to the Application
     public void Login(View view)
     {
         Email = LoginUsername.getText().toString();
@@ -67,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         if(Email.isEmpty() || Password.isEmpty())
         {
             Toast.makeText(MainActivity.this,"Please Enter Email and Password", Toast.LENGTH_SHORT).show();
-
         }
         else {
             mAuth.signInWithEmailAndPassword(Email, Password)
@@ -96,45 +92,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    //Sends user to Signup page
     public void Signup(View view)
     {
         Intent intent   = new Intent(this, SignUp.class);
         startActivity(intent);
     }
-    /*public void ChangeLanguage(View view)
-    {
-        String currentLocal = Locale.getDefault().getLanguage();
-        if(currentLocal == "en") {
-            Locale myLocale = new Locale("th");
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            Configuration conf = res.getConfiguration();
-            conf.locale = myLocale;
-            res.updateConfiguration(conf, dm);
-            Intent refresh = new Intent(this, MainActivity.class);
-            refresh.putExtra("Current_Language","EN");
-            startActivity(refresh);
-            finish();
-        }
-        else if(currentLocal == "th")
-        {
-            Locale myLocale = new Locale("en");
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            Configuration conf = res.getConfiguration();
-            conf.locale = myLocale;
-            res.updateConfiguration(conf, dm);
-            Intent refresh = new Intent(this, MainActivity.class);
-            refresh.putExtra("Current_Language","TH");
-            startActivity(refresh);
-            finish();
-        }
-    }*/
-    public void Preference(View view)
-    {
-        Intent intent = new Intent(MainActivity.this,Preference.class);
-        startActivity(intent);
-    }
+
+    //Users can use the example account to see the system and how it is used
     public void Bypassing(View view)
     {
     Bypassincrement--;
@@ -166,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
 
-                        // ...
                     }
                 });
     }
