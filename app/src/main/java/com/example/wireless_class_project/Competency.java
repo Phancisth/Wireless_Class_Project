@@ -162,6 +162,28 @@ public class Competency extends AppCompatActivity {
             System.out.println(temporary[g]);
             g++;
         }
+
+       /**
+        * List of subjects that effect the rank of each track
+        *
+        * CS:
+        * 	ITCS443,ITCS343,ITCS451,ITCS306,ITCS222,ITCS200,ITCS175,ITCS211,ITCS125
+        * SE:
+        * 	ITCS371,ITCS159,ITCS208,ITCS200,ITCS125,
+        * DB:
+        * 	ITCS241,ITCS414,ITCS231,ITCS320,ITCS200,ITCS208,ITCS125
+        * CN:
+        * 	ITCS420,ITCS323,ITCS200,ITCS208,ITCS211,ITCS125,
+        * HT:
+        * 	ITCS241,ITCS371,ITCS200
+        * MM:
+        * 	ITCS381,ITCS320,ITCS200,ITCS208
+        * MS:
+        * 	ITCS361,ITCS371,ITCS231,ITCS208
+        * EB:
+        * 	ITCS335,ITCS200,ITCS208,ITCS231
+        * **/
+
         TrackScore[0] = temporary[20];
         TrackScore[1] = temporary[19];
         TrackScore[2] = temporary[11];
