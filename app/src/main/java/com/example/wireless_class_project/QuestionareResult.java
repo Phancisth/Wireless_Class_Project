@@ -134,7 +134,7 @@ public class QuestionareResult extends AppCompatActivity {
     public void BacktoMain(View view)
     {
         finishAndRemoveTask();;
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
 }

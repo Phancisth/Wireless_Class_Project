@@ -1,5 +1,6 @@
 package com.example.wireless_class_project;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -36,11 +37,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String TAG = "LoginPage";
     private int Bypassincrement = 5;
+    public static Activity temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        temp = this;
         mAuth = FirebaseAuth.getInstance();
         LoginUsername = findViewById(R.id.Login_Username);
         LoginPassword = findViewById(R.id.Login_Password);

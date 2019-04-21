@@ -52,7 +52,7 @@ public class Preference extends AppCompatActivity {
 //    }
 
     public void ChangeLanguage(View view) {
-
+        MainActivity.temp.finishAndRemoveTask();
         if (currentLocal.contains("en")) {
             //System.out.println(currentLocal);
             Locale myLocale = new Locale("th");
@@ -87,7 +87,7 @@ public class Preference extends AppCompatActivity {
     }
     public void ResetDB(View view)
     {
-
+        MainActivity.temp.finishAndRemoveTask();
         docRef = db.collection("users").document(mAuth.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -106,6 +106,9 @@ public class Preference extends AppCompatActivity {
                         data.put("GradeEdit", "0");
                         db.collection("users").document(name).set(data);
                         mDatabaseHelper.deleteName(name);
+                        Intent refresh = new Intent(Preference.this, HomePage.class);
+                        refresh.putExtra("Current_Language", "th");
+                        startActivity(refresh);
                     } else {
                         Log.d(TAG, "No such document");
                     }

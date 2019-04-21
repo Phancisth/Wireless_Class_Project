@@ -171,7 +171,6 @@ public class HomePage extends AppCompatActivity {
     }
     public void GoToPreference(View view)
     {
-        finishAndRemoveTask();
         Intent intent = new Intent(this, Preference.class);
         startActivity(intent);
     }
