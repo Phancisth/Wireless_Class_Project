@@ -142,20 +142,22 @@ public class Competency extends AppCompatActivity {
     {
         Cursor datas = mDatabaseHelper.getScoreID(mAuth.getUid());
         ArrayList<RadarEntry> user = new ArrayList<>();
-        HashMap<String,Float> result = new HashMap<>();
-        float[] temporary = new float[22];
+        HashMap<String,Float> result = new HashMap<>();     //Hash map of <subject, grade>
+        float[] temporary = new float[22];      //Grade for each subject
         int g = 0;
 
         while(datas.moveToNext()){
             //get the value from the database in column 1
             //then add it to the ArrayList
             for(int i=0;i<22;i++) {
-                result.put(Subjects[i],Float.parseFloat(datas.getString(i)));
+                result.put(Subjects[i],Float.parseFloat(datas.getString(i)));   //Putting data into hash map
             }
 
         }
         for(String temp:Subjects)
         {
+            //For each iteration, temp becomes the subject name in Subjects[]
+            //Use temp as input for 'get' hash function to retrieve the grade of that subject
             temporary[g] = result.get(temp);
             System.out.println(temporary[g]);
             g++;
