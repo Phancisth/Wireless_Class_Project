@@ -135,10 +135,15 @@ public class MainActivity extends AppCompatActivity {
     public void Bypassing(View view)
     {
     Bypassincrement--;
-        Toast.makeText(MainActivity.this, "Bypassing "+Bypassincrement,
-                Toast.LENGTH_SHORT).show();
+    if(Bypassincrement > 0) {
+        Toast.makeText(MainActivity.this, "Example Login " + Bypassincrement, Toast.LENGTH_SHORT).show();
+    }
+    else
+    {
+        Toast.makeText(MainActivity.this, "Example Login Success ", Toast.LENGTH_SHORT).show();
+    }
     if(Bypassincrement == 0) {
-        mAuth.signInWithEmailAndPassword("wirelessproject@wireless.com", "wirelessproject")
+        mAuth.signInWithEmailAndPassword("wireless@wireless.com", "wireless")
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
