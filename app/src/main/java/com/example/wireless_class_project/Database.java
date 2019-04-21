@@ -152,7 +152,7 @@ public class Database extends AppCompatActivity {
                         //editText.setText("");
                     }
                 } else {
-                    toastMessage("You must put something in the text field!");
+                    toastMessage("You must put your grade in the text field!");
                 }
 
             }

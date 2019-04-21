@@ -150,7 +150,7 @@ public class HomePage extends AppCompatActivity {
                         {
                             Intent intent = new Intent(HomePage.this, ListDataActivity.class);
                             startActivity(intent);
-                            Toast.makeText(HomePage.this,"You Have Already Input Grade Once", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(HomePage.this,"Edit Mode, Delete is in Preference", Toast.LENGTH_SHORT).show();
                         }
 
                     } else {

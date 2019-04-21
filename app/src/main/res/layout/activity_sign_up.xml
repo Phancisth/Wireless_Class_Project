@@ -43,6 +43,13 @@
 
         <!-- Signup Button -->
         <EditText
+            android:id="@+id/input_password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ConfirmPass"
+            android:inputType="textPassword" />
+
+        <EditText
             android:id="@+id/input_studentID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

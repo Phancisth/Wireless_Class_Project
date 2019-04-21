@@ -83,6 +83,7 @@
     <string name="Back_To_Main" translatable="false">Main Menu</string>
     <string name="Result_Dialogue">Your result is:</string>
     <string name="ResetDB">Reset Database</string>
+    <string name="ConfirmPass">Confirm Password</string>
 
 
 </resources>
