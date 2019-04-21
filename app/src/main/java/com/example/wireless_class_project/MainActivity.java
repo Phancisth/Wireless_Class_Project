@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     {
         Email = LoginUsername.getText().toString();
         Password = LoginPassword.getText().toString();
-        System.out.println(Email +" "+ Password);
+
         if(Email.isEmpty() || Password.isEmpty())
         {
             Toast.makeText(MainActivity.this,"Please Enter Email and Password", Toast.LENGTH_SHORT).show();

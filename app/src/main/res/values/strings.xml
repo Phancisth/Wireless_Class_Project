@@ -68,7 +68,7 @@
 
     <string name="BackToMain">Main Menu</string>
     <string name="Track_Name_Header" translatable="false">Track Name</string>
-    <string name="Rank_Header" translatable="false">Rank</string>
+    <string name="Rank_Header">Score</string>
     <string name="Rank1" translatable="false">01</string>
     <string name="Rank2" translatable="false">02</string>
     <string name="Rank3" translatable="false">03</string>

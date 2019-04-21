@@ -497,7 +497,7 @@ public class Questionare extends AppCompatActivity {
             Intent nextpage = new Intent(this, Questionare.class);
             nextpage.putExtra("Score", Score);
             nextpage.putExtra("Page", page + 1);
-            System.out.println(page + " " + "/n" + "Score " + Score[0] + " " + Score[1] + " " + Score[2] + " " + Score[3] + " " + Score[4] + " " + Score[5] + " " + Score[6] + " " + Score[7] + " /n");
+            //System.out.println(page + " " + "/n" + "Score " + Score[0] + " " + Score[1] + " " + Score[2] + " " + Score[3] + " " + Score[4] + " " + Score[5] + " " + Score[6] + " " + Score[7] + " /n");
             startActivity(nextpage);
         }
         else

@@ -8,21 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.RadarChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,9 +28,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 
@@ -53,6 +47,7 @@ public class Competency extends AppCompatActivity {
     private String StudentID;
     private TextView[] T1 = new TextView[8];
     private TextView T2;
+    private TextView[] ScoreT1 = new TextView[8];
     private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +68,14 @@ public class Competency extends AppCompatActivity {
         T1[1] = findViewById(R.id.TrackNo7);
         T1[0] = findViewById(R.id.TrackNo8);
         T2 = findViewById(R.id.trackname);
+        ScoreT1[7] = findViewById(R.id.Rank01);
+        ScoreT1[6] = findViewById(R.id.Rank02);
+        ScoreT1[5] = findViewById(R.id.Rank03);
+        ScoreT1[4] = findViewById(R.id.Rank04);
+        ScoreT1[3] = findViewById(R.id.Rank05);
+        ScoreT1[2] = findViewById(R.id.Rank06);
+        ScoreT1[1] = findViewById(R.id.Rank07);
+        ScoreT1[0] = findViewById(R.id.Rank08);
 
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
@@ -84,7 +87,6 @@ public class Competency extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        //System.out.println(document.get("StudentID"));
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         T2.setText(document.get("Recom_Track").toString());
                     } else {
@@ -159,7 +161,6 @@ public class Competency extends AppCompatActivity {
             //For each iteration, temp becomes the subject name in Subjects[]
             //Use temp as input for 'get' hash function to retrieve the grade of that subject
             temporary[g] = result.get(temp);
-            System.out.println(temporary[g]);
             g++;
         }
 
@@ -203,6 +204,7 @@ public class Competency extends AppCompatActivity {
             user.add(new RadarEntry((val)));
         }
         String[] tempptracks = new String[8];
+        String scoretemp;
         float max = 0;
         int choose = 0;
         int T1Num = 7;
@@ -211,13 +213,13 @@ public class Competency extends AppCompatActivity {
                 if (TrackScore[i] > max) {
                     max = TrackScore[i];
                     T1[T1Num].setText(tracks[i]);
+
+                    scoretemp =String.format("%.2f", TrackScore[i]);
+                    ScoreT1[T1Num].setText(scoretemp);
                     choose = i;
 
                 }
             }
-            System.out.println("ITEMS : ");
-            System.out.println(TrackScore[5]);
-
             T1Num--;
             TrackScore[choose] = -1;
             max = 0;
@@ -247,10 +249,10 @@ public class Competency extends AppCompatActivity {
     }
     public void GodTemp(View view)
     {
-//        chart.getXAxis().setEnabled(!chart.getXAxis().isEnabled());
+ //       chart.getXAxis().setEnabled(!chart.getXAxis().isEnabled());
 //        chart.notifyDataSetChanged();
 
-        chart.invalidate();
+ //       chart.invalidate();
     }
     public void Logout(View view)
     {

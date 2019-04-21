@@ -139,7 +139,7 @@ public class HomePage extends AppCompatActivity {
                         }
                         else
                         {
-                            System.out.println("WHAT");
+
                             GradeEdit = 0;
                         }
                         if(GradeEdit == 0) {
@@ -161,7 +161,7 @@ public class HomePage extends AppCompatActivity {
                 }
             }
         });
-        System.out.println("THIS SHIT"+GradeEdit);
+
 
     }
     public void GoToQuestionare(View view)

@@ -62,4 +62,5 @@
 
     <string name="Result_Dialogue">ผลแบบทดสอบของคุณ:</string>
     <string name="ResetDB">รีเซ็ตฐานข้อมูล</string>
+    <string name="Rank_Header">คะแนน</string>
 </resources>
