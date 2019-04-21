@@ -54,6 +54,13 @@
             android:onClick="ChangeLanguage"
             android:text="@string/ChangeLan" />
 
+        <Button
+            android:id="@+id/ResetDB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ResetDB"
+            android:text="@string/ResetDB" />
+
         <!--<Button-->
             <!--android:id="@+id/Bypass"-->
             <!--android:layout_width="match_parent"-->

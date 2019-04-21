@@ -27,28 +27,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "user_id_grades";
     private static final String COL1 = "ID";
     private static final String COL2 = "name";
-    private static final String COL3 = "ITCS175";       //Advanced Math
-    private static final String COL4 = "ITCS200";       //Fund. Program
-    private static final String COL5 = "ITCS320";       //Discrete Structure
-    private static final String COL6 = "ITCS125";       //Applied Stat
-    private static final String COL7 = "ITCS208";       //Object Oriented Programming
-    private static final String COL8 = "ITCS211";       //Intro. to Digital System
-    private static final String COL9 = "ITCS159";       //Software Lab.
-    private static final String COL10 = "ITCS210";      //Web Programming
-    private static final String COL11 = "ITCS222";      //Computer Organization and Architect.
-    private static final String COL12 = "ITCS231";      //Data Structure and Algorithm
-    private static final String COL13 = "ITCS306";      //Numerical Method
-    private static final String COL14 = "ITCS241";      //Database Management System
-    private static final String COL15 = "ITCS323";      //Computer Data Comm.
-    private static final String COL16 = "ITCS335";      //Intro to E-Biz.
-    private static final String COL17 = "ITCS343";      //Principles of OS
-    private static final String COL18 = "ITCS381";      //Intro to Multi.
-    private static final String COL19 = "ITCS361";      //Management Info. System
-    private static final String COL20 = "ITCS371";      //Intro to Soft. Eng.
-    private static final String COL21 = "ITCS414";      //Info. Storage and Retriev.
-    private static final String COL22 = "ITCS420";      //Computer Network
-    private static final String COL23 = "ITCS443";      //Parallel and Distributed Sys.
-    private static final String COL24 = "ITCS451";      //AI
+    private static final String COL3 = "ITCS175";       //1Advanced Math
+    private static final String COL4 = "ITCS200";       //2Fund. Program
+    private static final String COL5 = "ITCS320";       //3Discrete Structure
+    private static final String COL6 = "ITCS125";       //4Applied Stat
+    private static final String COL7 = "ITCS208";       //5Object Oriented Programming
+    private static final String COL8 = "ITCS211";       //6Intro. to Digital System
+    private static final String COL9 = "ITCS159";       //7Software Lab.
+    private static final String COL10 = "ITCS210";      //8Web Programming
+    private static final String COL11 = "ITCS222";      //9Computer Organization and Architect.
+    private static final String COL12 = "ITCS231";      //10Data Structure and Algorithm
+    private static final String COL13 = "ITCS306";      //11Numerical Method
+    private static final String COL14 = "ITCS241";      //12Database Management System
+    private static final String COL15 = "ITCS323";      //13Computer Data Comm.
+    private static final String COL16 = "ITCS335";      //14Intro to E-Biz.
+    private static final String COL17 = "ITCS343";      //15Principles of OS
+    private static final String COL18 = "ITCS381";      //16Intro to Multi.
+    private static final String COL19 = "ITCS361";      //17Management Info. System
+    private static final String COL20 = "ITCS371";      //18Intro to Soft. Eng.
+    private static final String COL21 = "ITCS414";      //19Info. Storage and Retriev.
+    private static final String COL22 = "ITCS420";      //20Computer Network
+    private static final String COL23 = "ITCS443";      //21Parallel and Distributed Sys.
+    private static final String COL24 = "ITCS451";      //22AI
 
     private String UserID;
 
@@ -149,13 +149,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         FirebaseUser user = mAuth.getCurrentUser();
         UserID = user.getUid();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT '"+name+"' FROM " + TABLE_NAME + " WHERE "
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE "
                +COL2+" = '"+UserID+"'";
+
         Cursor data = db.rawQuery(query, null);
 
             return data;
     }
-
+    /*public boolean updateQuestion (int setNO, int questionFlag, Question question){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("problem", question.getQuestionName());
+        contentValues.put("answer1", question.getAnswers()[0]);
+        contentValues.put("answer2", question.getAnswers()[1]);
+        contentValues.put("answer3", question.getAnswers()[2]);
+        contentValues.put("answer4", question.getAnswers()[3]);
+        contentValues.put("correctans", question.getCorrectAnswer());
+        db.update("question", contentValues, "setNO= ? AND questionNo = ? AND questionFlag = ?", new String[]{ Integer.toString(setNO),Integer.toString(question.getQuestionNO()), Integer.toString(questionFlag)});
+        return true;
+    }*/
     /**
      * Returns the scores of the ID that matches the name passed in
      *
@@ -181,28 +193,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Updates the name field
      * @param newName
-     * @param id
-     * @param oldName
+     * @param
+     * @param
      */
-    public void updateName(String newName, int id, String oldName){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + COL2 + " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" + " AND " + COL2 + " = '" + oldName + "'";
-        Log.d(TAG, "updateName: query: " + query);
-        Log.d(TAG, "updateName: Setting name to " + newName);
-        db.execSQL(query);
-    }
+//    public void updateName(String newName, String COLName){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String query = "UPDATE " + TABLE_NAME + " SET " + COLName + " = '" + newName + "' WHERE " + COL1 + " = '" + id + "'" + " AND " + COL2 + " = '" + oldName + "'";
+//        Log.d(TAG, "updateName: query: " + query);
+//        Log.d(TAG, "updateName: Setting name to " + newName);
+//        db.execSQL(query);
+//    }
 
     /**
      * Update the score value of a subject of a user
      *
      * @param subjectID (this is exactly the same as column name)
      * @param newScore
-     * @param id
+     * @param
      */
-    public void updateScore(String newScore, int id, String subjectID) {
-
+    public void updateScore(String newScore, String subjectID) {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        UserID = user.getUid();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + subjectID + " = '" + newScore + "' WHERE" + COL1 + "= '" + id + "'";
+        String query = "UPDATE " + TABLE_NAME + " SET " + subjectID + " = '" + newScore + "' WHERE " + COL2 + "= '" + UserID+ "'";
         Log.d(TAG, "updateScore: query: " + query);
         Log.d(TAG, "updateScore: setting score to " + newScore);
         db.execSQL(query);

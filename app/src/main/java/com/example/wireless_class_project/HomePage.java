@@ -3,6 +3,7 @@ package com.example.wireless_class_project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.os.ConfigurationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Locale;
+
 public class HomePage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DocumentReference docRef;
@@ -29,6 +32,7 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //System.out.println("SOMETHINGHERE"+ ConfigurationCompat.getLocales(getResources().getConfiguration()).get(0));
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -88,9 +92,34 @@ public class HomePage extends AppCompatActivity {
     }
     public void GoToCompetency(View view)
     {
-        Intent intent   = new Intent(this, Competency.class);
-        intent.putExtra("StudentID", id);
-        startActivity(intent);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        //System.out.println(document.get("StudentID"));
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        if(document.get("GradeEdit").toString().compareTo("0") == 0)
+                        {
+                            Toast.makeText(HomePage.this,"Please Input Your Grade First", Toast.LENGTH_SHORT).show();
+
+                        }
+                        else
+                        {
+                            Intent intent   = new Intent(HomePage.this, Competency.class);
+                            intent.putExtra("StudentID", id);
+                            startActivity(intent);
+                        }
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
     }
     public void GoToGrade(View view)
     {
@@ -142,6 +171,7 @@ public class HomePage extends AppCompatActivity {
     }
     public void GoToPreference(View view)
     {
+        finishAndRemoveTask();
         Intent intent = new Intent(this, Preference.class);
         startActivity(intent);
     }

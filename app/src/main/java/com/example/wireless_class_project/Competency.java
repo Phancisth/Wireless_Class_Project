@@ -184,14 +184,14 @@ public class Competency extends AppCompatActivity {
         * 	ITCS335,ITCS200,ITCS208,ITCS231
         * **/
 
-        TrackScore[0] = temporary[20];
-        TrackScore[1] = temporary[19];
-        TrackScore[2] = temporary[11];
-        TrackScore[3] = temporary[13];
-        TrackScore[4] = temporary[21];
-        TrackScore[5] = temporary[16];
-        TrackScore[6] = temporary[15];
-        TrackScore[7] = temporary[17];
+        TrackScore[0] = (temporary[19]+temporary[12]+temporary[1]+temporary[4]+temporary[5]+temporary[3])/1.5f;
+        TrackScore[1] = (temporary[20]+temporary[14]+temporary[21]+temporary[10]+temporary[8]+temporary[1]+temporary[0]+temporary[5]+temporary[3])/1.7f;
+        TrackScore[2] = (temporary[11]+temporary[18]+temporary[9]+temporary[2]+temporary[1]+temporary[4]+temporary[3])/1.5f;
+        TrackScore[3] = (temporary[13]+temporary[1]+temporary[4]+temporary[9])*1.1f;
+        TrackScore[4] = (temporary[11]+temporary[17]+temporary[1])*1.5f;
+        TrackScore[5] = (temporary[15]+temporary[3]+temporary[1]+temporary[4])*1.1f;
+        TrackScore[6] = (temporary[16]+temporary[17]+temporary[9]+temporary[4])*1.1f;
+        TrackScore[7] = (temporary[17]+temporary[6]+temporary[4]+temporary[1]+temporary[3])/1.1f;
 
         for(int i=0;i<TRACKS;i++)//{"CN","CS","DB","EB","HT","MM","MS","SE"}
         {

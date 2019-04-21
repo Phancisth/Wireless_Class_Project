@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         LoginPassword = findViewById(R.id.Login_Password);
 
 
-        /*Language = findViewById(R.id.);
-        if(getIntent().getStringExtra("Current_Language") == null)
+
+        /*if(getIntent().getStringExtra("Current_Language") == null)
         {
-            Language.setText("TH");
+            Locale.setDefault(new Locale("en"));
         }
         else {
-            Language.setText(getIntent().getStringExtra("Current_Language"));
+            Locale.setDefault(new Locale(getIntent().getStringExtra("Current_Language")));
         }*/
     }
 

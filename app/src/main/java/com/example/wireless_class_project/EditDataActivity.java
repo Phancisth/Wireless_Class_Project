@@ -42,19 +42,24 @@ public class EditDataActivity extends AppCompatActivity {
         selectedName = receivedIntent.getStringExtra("name");
 
         //set the text to show the current selected name
-        editable_item.setText(selectedName);
+        editable_item.setHint(selectedName);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String item = editable_item.getText().toString();
                 if(!item.equals("")){
-                    mDatabaseHelper.updateName(item,selectedID,selectedName);
-                    finishAndRemoveTask();
-                    Intent intent = new Intent(EditDataActivity.this, ListDataActivity.class);
-                    startActivity(intent);
+                    if (Double.parseDouble(item) > 4 || Double.parseDouble(item) < 1) {
+                        toastMessage("Grade Value Not Good Format");
+                    }
+                    else {
+                        mDatabaseHelper.updateScore(item, selectedName);
+                        finishAndRemoveTask();
+                        Intent intent = new Intent(EditDataActivity.this, ListDataActivity.class);
+                        startActivity(intent);
+                    }
                 }else{
-                    toastMessage("You must enter a name");
+                    toastMessage("You must enter a new Score");
                 }
             }
         });

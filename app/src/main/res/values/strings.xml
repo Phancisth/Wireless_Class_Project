@@ -31,10 +31,10 @@
     <string name="CompetencyHead">Competency Report</string>
     <string name="BarchartDesc">Competency Barchart</string>
     <string name="TrackRank">Track Ranking</string>
-    <string name="Track1">TrackNumberOne</string>
-    <string name="Track2">TrackNumberTwo</string>
-    <string name="Track3">TrackNumberThree</string>
-    <string name="Track4">TrackNumberFour</string>
+    <string name="Track1" translatable="false">TrackNumberOne</string>
+    <string name="Track2" translatable="false">TrackNumberTwo</string>
+    <string name="Track3" translatable="false">TrackNumberThree</string>
+    <string name="Track4" translatable="false">TrackNumberFour</string>
 
     <string name="QuestionnaireResult">Latest Questionnaire Result</string>
     <string name="TrackName">Track Name</string>
@@ -60,28 +60,29 @@
     <string name="ITCS420">Computer Network</string>
     <string name="ITCS443">Parallel and Distributed System</string>
     <string name="ITCS451">Artificial Intelligence</string>
-    <string name="NO5">5.</string>
-    <string name="Track5">TrackNumberFive</string>
-    <string name="Track6">TrackNumberSix</string>
-    <string name="Track7">TrackNumberSeven</string>
-    <string name="Track8">TrackNumberEight</string>
+    <string name="NO5" translatable="false">5.</string>
+    <string name="Track5" translatable="false">TrackNumberFive</string>
+    <string name="Track6" translatable="false">TrackNumberSix</string>
+    <string name="Track7" translatable="false">TrackNumberSeven</string>
+    <string name="Track8" translatable="false">TrackNumberEight</string>
 
     <string name="BackToMain">Main Menu</string>
-    <string name="Track_Name_Header">Track Name</string>
-    <string name="Rank_Header">Rank</string>
-    <string name="Rank1">01</string>
-    <string name="Rank2">02</string>
-    <string name="Rank3">03</string>
-    <string name="Rank4">04</string>
-    <string name="Rank5">05</string>
-    <string name="Rank6">06</string>
-    <string name="Rank7">07</string>
-    <string name="Rank8">08</string>
+    <string name="Track_Name_Header" translatable="false">Track Name</string>
+    <string name="Rank_Header" translatable="false">Rank</string>
+    <string name="Rank1" translatable="false">01</string>
+    <string name="Rank2" translatable="false">02</string>
+    <string name="Rank3" translatable="false">03</string>
+    <string name="Rank4" translatable="false">04</string>
+    <string name="Rank5" translatable="false">05</string>
+    <string name="Rank6" translatable="false">06</string>
+    <string name="Rank7" translatable="false">07</string>
+    <string name="Rank8" translatable="false">08</string>
     <string name="Quiz_Result_Header">Latest Questionnaire Result</string>
-    <string name="Track_Name">Track Name</string>
+    <string name="Track_Name" translatable="false">Track Name</string>
 
-    <string name="Back_To_Main">Main Menu</string>
+    <string name="Back_To_Main" translatable="false">Main Menu</string>
     <string name="Result_Dialogue">Your result is:</string>
+    <string name="ResetDB">Reset Database</string>
 
 
 </resources>
