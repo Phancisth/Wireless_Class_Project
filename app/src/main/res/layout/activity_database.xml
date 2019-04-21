@@ -12,7 +12,7 @@
         android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <android.support.constraint.ConstraintLayout
@@ -23,7 +23,7 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -55,7 +55,7 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 android:layout_marginTop="68dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -88,7 +88,7 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 android:layout_marginTop="136dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -210,46 +210,13 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/ITCS211"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="76dp"
+                    android:layout_marginEnd="18dp"
                     android:ems="10"
                     android:hint="0"
                     android:inputType="numberDecimal"
                     android:textColor="@android:color/darker_gray" />
             </RelativeLayout>
 
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout7"
-                android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:layout_marginTop="272dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/ITCS159"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginBottom="0dp"
-                    android:text="@string/ITCS211"
-                    android:textSize="18sp"
-                    tools:text="@string/ITCS211" />
-
-                <EditText
-                    android:id="@+id/ITCS159_edit"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/ITCS159"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="61dp"
-                    android:ems="10"
-                    android:hint="0"
-                    android:inputType="numberDecimal"
-                    android:textColor="@android:color/darker_gray" />
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/relativeLayout8"
@@ -686,7 +653,7 @@
                 android:id="@+id/relativeLayout21"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
-                android:layout_marginTop="1290dp"
+                android:layout_marginTop="1276dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -719,7 +686,7 @@
                 android:id="@+id/relativeLayout22"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
-                android:layout_marginTop="1355dp"
+                android:layout_marginTop="1340dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -754,18 +721,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="1420dp"
+                android:layout_marginTop="1404dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
-                <Button
-                    android:id="@+id/btnAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:text="Add" />
 
                 <Button
                     android:id="@+id/btnView"
@@ -775,6 +735,17 @@
                     android:layout_toRightOf="@+id/btnAdd"
                     android:text="View Data"
                     android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginEnd="159dp"
+                    android:text="Add" />
 
             </RelativeLayout>
 
