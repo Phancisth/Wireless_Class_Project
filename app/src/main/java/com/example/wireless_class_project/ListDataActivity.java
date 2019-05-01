@@ -37,7 +37,29 @@ public class ListDataActivity extends AppCompatActivity {
 
     private ListView mListView;
 
-    private String[] Subjects = {"ITCS175","ITCS200","ITCS320","ITCS125","ITCS208","ITCS211","ITCS159","ITCS210","ITCS222","ITCS231","ITCS306","ITCS241","ITCS323","ITCS335","ITCS343","ITCS381","ITCS361","ITCS371","ITCS414","ITCS420","ITCS443","ITCS451"};
+    private String[] Subjects = {
+            "Advanced Math for Computer Science",
+            "C Programming",
+            "Discrete Structure",
+            "Applied Statistics for Computing",
+            "Java Programming",
+            "Introduction to Digital System",
+            "Software Lab",
+            "Web Programming",
+            "Computer Organization and Architecture",
+            "Data Structure and Algorithm Analysis",
+            "Numerical Methods",
+            "Database Management System",
+            "Computer Data Communication",
+            "Introduction to E-business",
+            "Principle of Operating System",
+            "Introduction to Multimedia",
+            "Management Information System",
+            "Introduction to Software Engineering",
+            "Information Storage and Retrieval",
+            "Computer Networks",
+            "Parallel and Distributed System",
+            "Artificial Intelligence"};
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
