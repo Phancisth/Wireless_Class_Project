@@ -34,6 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
+    private int BackLogout = 2;
     //namespace
     private EditText namein, emailin, passwordin, studentIDin,Confirmin;
     private FirebaseAuth mAuth;
@@ -47,6 +48,8 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         //initialize
+        BackLogout = 2;
+
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -128,6 +131,18 @@ public class SignUp extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    /*@Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
 
 }

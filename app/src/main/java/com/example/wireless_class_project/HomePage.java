@@ -31,11 +31,13 @@ public class HomePage extends AppCompatActivity {
     private String name,id,year;
     private TextView Tname,Tid,Tyear;
     private int GradeEdit;
+    private int BackLogout = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         //Initialize
+        BackLogout = 2;
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -89,6 +91,18 @@ public class HomePage extends AppCompatActivity {
         finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    /*@Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
     //Directs the user to the Competency Page
     public void GoToCompetency(View view)

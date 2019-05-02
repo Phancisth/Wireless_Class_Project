@@ -31,6 +31,7 @@ public class ListDataActivity extends AppCompatActivity {
 
     //NameSpace
     private static final String TAG = "ListDataActivity";
+    private int BackLogout = 2;
     private FirebaseAuth mAuth;
 
     DatabaseHelper mDatabaseHelper;
@@ -65,6 +66,7 @@ public class ListDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         //Initialize
+        BackLogout = 2;
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         mListView = (ListView) findViewById(R.id.listView);
@@ -140,9 +142,24 @@ public class ListDataActivity extends AppCompatActivity {
             }
         });
     }
-
+   /* @Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
     //Toast Handler
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

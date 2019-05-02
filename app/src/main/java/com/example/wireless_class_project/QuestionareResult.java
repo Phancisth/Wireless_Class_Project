@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,6 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class QuestionareResult extends AppCompatActivity {
+    private int BackLogout = 2;
     //nameSpace
     private int Score[] = new int[8];
     private TextView ShowTrack;
@@ -44,6 +46,7 @@ public class QuestionareResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare_result);
         //Initialize
+        BackLogout = 2;
         Score = getIntent().getIntArrayExtra("Score");
         int max = 0;
         int trackchosen = 0;
@@ -136,11 +139,30 @@ public class QuestionareResult extends AppCompatActivity {
         Intent restart = new Intent(this,Questionare.class);
         startActivity(restart);
     }
+    @Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }
     //Back to menu
     public void BacktoMain(View view)
     {
         finishAndRemoveTask();;
         Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

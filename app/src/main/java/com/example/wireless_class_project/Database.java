@@ -41,12 +41,13 @@ public class Database extends AppCompatActivity {
     private String[] score = new String[22];
     private String name;
     private EditText ITCS175, ITCS200, ITCS320, ITCS125, ITCS208, ITCS211, ITCS159, ITCS210, ITCS222, ITCS231, ITCS306, ITCS241, ITCS323, ITCS335, ITCS343, ITCS381, ITCS361, ITCS371, ITCS414, ITCS420, ITCS443, ITCS451;
-
+    private int BackLogout = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
         //Initialize
+        BackLogout = 2;
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -172,6 +173,15 @@ public class Database extends AppCompatActivity {
         });
 
     }
+    /*@Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
     //Add Data to the SQLite Storage
     public void AddData(String[] newEntry) {
         boolean insertData = mDatabaseHelper.addData(newEntry);
@@ -184,6 +194,13 @@ public class Database extends AppCompatActivity {
     }
 
     //Toast Message Handler
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }

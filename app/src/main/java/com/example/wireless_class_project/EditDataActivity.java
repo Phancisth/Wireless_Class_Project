@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class EditDataActivity extends AppCompatActivity {
@@ -27,17 +28,19 @@ public class EditDataActivity extends AppCompatActivity {
 
     private String selectedName;
     private int selectedID;
-
+    private int BackLogout = 2;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
         //Initialize
+        BackLogout = 2;
         btnSave = (Button) findViewById(R.id.btnSave);
         btnDelete = (Button) findViewById(R.id.btnDelete);
         editable_item = (EditText) findViewById(R.id.editable_item);
         mDatabaseHelper = new DatabaseHelper(this);
-
+        mAuth = FirebaseAuth.getInstance();
         //get the intent extra from the ListDataActivity
         Intent receivedIntent = getIntent();
 
@@ -83,7 +86,22 @@ public class EditDataActivity extends AppCompatActivity {
         });
 
     }
-
+    /*@Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     //Toast Handler
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();

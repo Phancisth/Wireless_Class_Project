@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class Questionare extends AppCompatActivity {
 
+    private int BackLogout = 2;
     //Namespace
     RadioGroup radioGroup1,radioGroup2, radioGroup3, radioGroup4, radioGroup5;
     RadioButton checkedRadioButtonG1, checkedRadioButtonG2, checkedRadioButtonG3, checkedRadioButtonG4, checkedRadioButtonG5;
@@ -32,6 +33,7 @@ public class Questionare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionare);
         //Initialize
+        BackLogout = 2;
         Q1 = findViewById(R.id.Questionare_Q1);
         Q2 = findViewById(R.id.Questionare_Q2);
         Q3 = findViewById(R.id.Questionare_Q3);
@@ -612,6 +614,18 @@ public class Questionare extends AppCompatActivity {
         }
         return "0";
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
 
 }

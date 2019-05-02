@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,10 +39,12 @@ public class Preference extends AppCompatActivity {
     private DocumentReference docRef;
     private String TAG = "Preference";
     private String name;
+    private int BackLogout = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
+        BackLogout = 2;
         //Initialize
         currentLocal = ConfigurationCompat.getLocales(getResources().getConfiguration()).get(0).toString();
         FirebaseApp.initializeApp(this);
@@ -82,6 +85,18 @@ public class Preference extends AppCompatActivity {
 
         }
     }
+    /*@Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
     //Delete all Gradeinput data in the DB for the current user
     public void ResetDB(View view)
     {
@@ -116,5 +131,12 @@ public class Preference extends AppCompatActivity {
 
             }
         });
+    }
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

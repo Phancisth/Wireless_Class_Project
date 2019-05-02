@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.RadarChart;
@@ -55,12 +56,14 @@ public class Competency extends AppCompatActivity {
     private TextView T2;
     private TextView[] ScoreT1 = new TextView[8];
     private FirebaseFirestore db;
+    private int BackLogout = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competency);
         //Initialize
+        BackLogout = 2;
         chart = findViewById(R.id.RadarChart);
         mDatabaseHelper = new DatabaseHelper(this);
         StudentID = getIntent().getStringExtra("StudentID");
@@ -150,6 +153,15 @@ public class Competency extends AppCompatActivity {
 
 
     }
+   /* @Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            Logout(this.findViewById(android.R.id.content));
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will log out");
+            BackLogout--;
+        }
+    }*/
     //Sets the Data for the competency Report Chart
     public void setData()
     {
@@ -261,9 +273,13 @@ public class Competency extends AppCompatActivity {
     //Logout of the App
     public void Logout(View view)
     {
+        mAuth.signOut();
         finishAndRemoveTask();
         Intent intent   = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
 
 }

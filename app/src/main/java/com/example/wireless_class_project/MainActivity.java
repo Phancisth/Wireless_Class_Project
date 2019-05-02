@@ -43,11 +43,13 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "LoginPage";
     private int Bypassincrement = 5;
     public static Activity temp;
+    private int BackLogout = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
         //Initialize
+        BackLogout = 2;
         setContentView(R.layout.activity_main);
         temp = this;
         mAuth = FirebaseAuth.getInstance();
@@ -98,7 +100,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent   = new Intent(this, SignUp.class);
         startActivity(intent);
     }
-
+    @Override
+    public void onBackPressed() {
+        if (BackLogout <= 0) {
+            System.exit(0);
+        } else {
+            toastMessage("Pressing Back "+BackLogout+" times will Close the app");
+            BackLogout--;
+        }
+    }
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
     //Users can use the example account to see the system and how it is used
     public void Bypassing(View view)
     {
@@ -135,6 +148,14 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+
+    }
+    public void Logout(View view)
+    {
+        mAuth.signOut();
+        finishAndRemoveTask();
+        Intent intent   = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
