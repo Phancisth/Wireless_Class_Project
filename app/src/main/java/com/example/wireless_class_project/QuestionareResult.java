@@ -117,7 +117,7 @@ public class QuestionareResult extends AppCompatActivity {
                         data.put("UID", name);
                         data.put("StudentID", document.get("StudentID").toString());
                         data.put("Recom_Track", ShowTrack.getText().toString());
-                        data.put("GradeEdit", "1");
+                        data.put("GradeEdit", document.get("GradeEdit").toString());
                         db.collection("users").document(name).set(data);
 
                     } else {
